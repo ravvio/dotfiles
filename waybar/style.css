@@ -1,0 +1,62 @@
+@define-color black #282828;
+@define-color white #ccd6eb;
+@define-color yellow #ddca7d;
+@define-color red #d16666;
+@define-color gray #7d8ca3;
+
+* {
+    font-family: FiraCode Nerd Font;
+    font-size: 14px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: rgba(21, 18, 27, 0);
+    color: @white;
+    padding-top: 5px;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+#clock, #tray, #workspaces {
+    padding: 2px 10px;
+    margin-top: 8px;
+    margin-bottom: 3px;
+}
+
+#clock, #tray {
+    background-color: @black;
+    border-radius: 10px 10px 0px 0px;
+}
+
+#clock {
+    color: @yellow;
+    opacity: 0.95;
+    border-radius: 10px 10px 10px 10px;
+}
+
+#tray {
+    opacity: 0.9;
+    border-radius: 10px 0px 0px 10px;
+}
+
+
+#workspaces {
+    background-color: @black;
+    padding: 0px;
+    margin-left: 10px;
+    border-radius: 10px 10px 10px 10px;
+    opacity: 0.9;
+}
+
+#workspaces button {
+    border-radius: 0px;
+    color: @gray;
+    opacity: 0.7;
+}
+
+#workspaces button.active {
+    font-weight: bold;
+    color: @red;
+}
+
