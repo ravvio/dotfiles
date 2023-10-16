@@ -2,7 +2,20 @@
 @define-color white #ccd6eb;
 @define-color yellow #ddca7d;
 @define-color red #d16666;
+@define-color bright-red #C84630;
 @define-color gray #7d8ca3;
+@define-color green #4DA167;
+@define-color dark-green #386150;
+@define-color flame #E4572E;
+@define-color moss #646536;
+@define-color pink #9E768F;
+@define-color midnight-green #13505B;
+
+@define-color ash #bfc3ba;
+@define-color silver #a9aca9;
+@define-color eggplant #60495a;
+@define-color violet #3f3244;
+@define-color purple #2f2235;
 
 * {
     font-family: FiraCode Nerd Font;
@@ -18,28 +31,65 @@ window#waybar {
     transition-duration: .5s;
 }
 
-#clock, #tray, #workspaces {
+#clock,
+#tray, 
+#workspaces,
+#pulseaudio,
+#backlight,
+#battery,
+#temperature,
+#cpu {
     padding: 2px 10px;
     margin-top: 8px;
     margin-bottom: 3px;
-}
-
-#clock, #tray {
     background-color: @black;
-    border-radius: 10px 10px 0px 0px;
 }
 
 #clock {
     color: @yellow;
-    opacity: 0.95;
     border-radius: 10px 10px 10px 10px;
 }
 
-#tray {
+#temperature {
+    margin-left: 10px;
+    border-radius: 10px 0px 0px 10px;
+    font-weight: bold;
+    color: @silver;
+}
+
+#battery, #pulseaudio, #brightness,
+#cpu, #temperature, #clock, #tray {
     opacity: 0.9;
+}
+
+#backlight {
+    color: @yellow;
+}
+
+#battery {
+    margin-left: 10px;
     border-radius: 10px 0px 0px 10px;
 }
 
+#battery.full {
+    color: @green;
+}
+
+#battery.charging {
+    color: @dark-green;
+}
+
+#pulseaudio {
+    color: @pink;
+}
+
+#pulseaudio.microphone {
+    border-radius: 0px 10px 10px 0px;
+}
+
+#cpu {
+    color: @silver;
+}
 
 #workspaces {
     background-color: @black;
@@ -51,12 +101,11 @@ window#waybar {
 
 #workspaces button {
     border-radius: 0px;
-    color: @gray;
-    opacity: 0.7;
+    color: @ash;
 }
 
 #workspaces button.active {
     font-weight: bold;
-    color: @red;
+    color: @bright-red;
 }
 

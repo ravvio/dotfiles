@@ -1,0 +1,39 @@
+#!/bin/bash
+
+increase_volume() {
+    pamixer -i 2
+}
+
+decrease_volume() {
+    pamixer -d 2
+}
+
+toggle_mute() {
+    pamixer --toggle-mute
+}
+
+increase_microphone() {
+    pamixer --default-source -i 2
+}
+
+decrease_microphone() {
+    pamixer --default-source -d 2
+}
+
+toggle_microphone() {
+    pamixer --default-source --toggle-mute
+}
+
+if [[ "$1" == "--increase-volume" ]]; then
+    increase_volume
+elif [[ "$1" == "--decrease-volume" ]]; then
+    decrease_volume
+elif [[ "$1" == "--toggle-mute" ]]; then
+    toggle_mute
+elif [[ "$1" == "--increase-microphone" ]]; then
+    increase_microphone
+elif [[ "$1" == "--decrease-microphone" ]]; then
+    decrease_microphone
+elif [[ "$1" == "--toggle-microphone" ]]; then
+    toggle_microphone
+fi
