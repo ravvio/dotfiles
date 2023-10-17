@@ -6,7 +6,7 @@ return {
     config = function()
         require('mason-lspconfig').setup {
             ensure_installed = {
-                "rust-analyzer",
+                "rust_analyzer",
                 "lua_ls",
                 "tsserver",
                 "pyright",
