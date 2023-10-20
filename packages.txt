@@ -1,0 +1,6 @@
+- pacman ; neovim
+- pacman ; lazygit
+- pacman ; tmux
+- pacman ; parallel
+
+

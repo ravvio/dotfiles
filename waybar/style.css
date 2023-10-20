@@ -52,9 +52,7 @@ window#waybar {
 
 #temperature {
     margin-left: 10px;
-    border-radius: 10px 0px 0px 10px;
-    font-weight: bold;
-    color: @silver;
+    border-radius: 10px 10px 10px 10px;
 }
 
 #battery, #pulseaudio, #brightness,
@@ -77,6 +75,18 @@ window#waybar {
 
 #battery.charging {
     color: @dark-green;
+}
+
+#battery.discharging.good {
+    color: @dark-green;
+}
+
+#battery.discharging.warning {
+    color: @yellow;
+}
+
+#battery.discharging.critical {
+    color: @bright-red;
 }
 
 #pulseaudio {
@@ -106,6 +116,6 @@ window#waybar {
 
 #workspaces button.active {
     font-weight: bold;
-    color: @bright-red;
+    color: @red;
 }
 

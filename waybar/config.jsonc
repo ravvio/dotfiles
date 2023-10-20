@@ -12,12 +12,12 @@
         "clock"
     ],
     "modules-right": [
+        "temperature",
         "battery",
         "cpu",
         "backlight",
         "pulseaudio",
         "pulseaudio#microphone",
-        "temperature",
         "tray"
     ],
     "clock": {
