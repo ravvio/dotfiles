@@ -2,5 +2,5 @@
 - pacman ; lazygit
 - pacman ; tmux
 - pacman ; parallel
-
+- yay    ; spotify-tui
 
