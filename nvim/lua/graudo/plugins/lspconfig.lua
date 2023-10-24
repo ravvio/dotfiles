@@ -14,7 +14,6 @@ return {
         lspconfig.pyright.setup { capabilities = capabilities }
         lspconfig.html.setup { capabilities = capabilities }
         lspconfig.jsonls.setup { capabilities = capabilities }
-        lspconfig.dart.setup { capabilities = capabilities }
 
         -- Set up global keymaps
         vim.keymap.set('n', '<leader>[', vim.diagnostic.open_float)
@@ -37,7 +36,7 @@ return {
                 vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
                 vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
                 vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
-                vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
+                vim.keymap.set('n', '<C-m>', vim.lsp.buf.signature_help, opts)
                 vim.keymap.set('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, opts)
                 vim.keymap.set('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder, opts)
                 vim.keymap.set('n', '<leader>wl', function()
@@ -45,7 +44,7 @@ return {
                 end, opts)
                 vim.keymap.set('n', '<leader>D', vim.lsp.buf.type_definition, opts)
                 vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
-                vim.keymap.set({ 'n', 'v' }, '<C-.>', vim.lsp.buf.code_action, opts)
+                vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, opts)
                 vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
                 vim.keymap.set('n', '<leader>lf', function()
                     vim.lsp.buf.format { async = true }
