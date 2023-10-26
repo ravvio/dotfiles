@@ -115,3 +115,6 @@ source $ZSH/oh-my-zsh.sh
 
 # Configure thefuck
 eval $(thefuck --alias)
+
+# Created by `pipx` on 2023-10-26 08:41:24
+export PATH="$PATH:/Users/alessioraviola/.local/bin"
