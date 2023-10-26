@@ -30,15 +30,15 @@
             "warning": 30,
             "critical": 20
         },
-        "format": "{icon}",
+        "format": "{icon} {capacity}%",
         "format-charging": " {capacity}%",
         "format-plugged": " {capacity}%",
         "format-alt-click": "click-right",
-        "format-alt": "{icon} {capacity}%",
+        "format-alt": "{icon}%",
         "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
     },
     "pulseaudio": {
-        "format": "{icon}",
+        "format": "{icon} {volume}%",
         "tooltip": true,
         "tooltip-format": "{icon} {volume}%\n{desc}",
         "on-click": "~/.config/graudo/scripts/volume --toggle-mute",
@@ -56,7 +56,7 @@
     },
     "pulseaudio#microphone": {
         "format": "{format_source}",
-        "format-source": "",
+        "format-source": " {volume}%",
         "format-source-muted": "",
         "on-click": "~/.config/graudo/scripts/volume --toggle-microphone",
         "on-click-right": "pavucontrol",
@@ -77,10 +77,10 @@
     },
     "cpu": {
         "interval": 10,
-        "format": "",
+        "format": " {usage}%",
         "max-length": 10,
         "format-alt-click": "click-right",
-        "format-alt": " {usage}%",
+        "format-alt": "",
         "on-click": "kitty --start-as=fullscreen --title btop sh -c 'btop'"
     },
     "tray": {
