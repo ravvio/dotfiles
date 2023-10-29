@@ -41,7 +41,7 @@
         "format": "{icon} {volume}%",
         "tooltip": true,
         "tooltip-format": "{icon} {volume}%\n{desc}",
-        "on-click": "~/.config/graudo/scripts/volume --toggle-mute",
+        "on-click": "~/dotfiles/scripts/volume --toggle-mute",
         "on-click-right": "pavucontrol",
         "format-muted": "",
         "format-icons": {
@@ -58,10 +58,10 @@
         "format": "{format_source}",
         "format-source": " {volume}%",
         "format-source-muted": "",
-        "on-click": "~/.config/graudo/scripts/volume --toggle-microphone",
+        "on-click": "~/dotfiles/scripts/volume --toggle-microphone",
         "on-click-right": "pavucontrol",
-        "on-scroll-up": "~/.config/graudo/scripts/volume --increase-microphone",
-        "on-scroll-down": "~/.config/graudo/scripts/volume --increase-microphone",
+        "on-scroll-up": "~/dotfiles/scripts/volume --increase-microphone",
+        "on-scroll-down": "~/dotfiles/scripts/volume --increase-microphone",
         "scroll-step": 5,
         "tooltip": true,
         "tooltip-format": " {volume}%"
@@ -72,8 +72,8 @@
         "format-alt-click": "click-right",
         "format-alt": "{icon} {percent}%",
         "format-icons": ["󰃞", "󰃟", "󰃠"],
-        "on-scroll-up": "~/.config/graudo/scripts/brightness --inc",
-        "on-scroll-down": "~/.config/graudo/scripts/brightness --dec"
+        "on-scroll-up": "~/dotfiles/scripts/brightness --inc",
+        "on-scroll-down": "~/dotfiles/scripts/brightness --dec"
     },
     "cpu": {
         "interval": 10,
