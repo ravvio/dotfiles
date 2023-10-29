@@ -12,6 +12,7 @@ return {
                 "pyright",
                 "html",
                 "jsonls",
+                "texlab",
             }
         }
     end,

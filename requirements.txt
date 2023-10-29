@@ -1,5 +1,0 @@
-- swaybg
-- kitty
-- waybar
-- wofy
-- hyprland

@@ -8,7 +8,7 @@ return {
             ensure_installed = {
                 "lua", "c", "rust", "norg", "javascript",
                 "typescript", "html", "css", "elixir", "python",
-                "json", "markdown", "latex", "dart" 
+                "json", "markdown", "latex", "dart", "latex"
             },
 
             auto_install = false,
