@@ -45,6 +45,11 @@ window#waybar {
     background-color: @black;
 }
 
+#tray {
+    margin-left: 10px;
+    border-radius: 10px 0px 0px 10px;
+}
+
 #clock {
     color: @yellow;
     border-radius: 10px 10px 10px 10px;
