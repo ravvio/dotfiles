@@ -13,6 +13,7 @@ return {
                 "html",
                 "jsonls",
                 "texlab",
+                "gopls",
             }
         }
     end,

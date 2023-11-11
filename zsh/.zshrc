@@ -8,9 +8,7 @@ fi
 export RUST="$HOME/.cargo/bin"
 export PATH="$PATH:$RUST"
 
-if type opam &> /dev/null; then
-    eval $(opam env --switch=default)
-fi
+[[ ! -r /home/alessio/.opam/opam-init/init.zsh ]] || source /home/alessio/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
