@@ -16,6 +16,7 @@ return {
         lspconfig.jsonls.setup { capabilities = capabilities }
         lspconfig.texlab.setup { capabilities = capabilities }
         lspconfig.gopls.setup { capabilities = capabilities }
+        lspconfig.templ.setup { capabilities = capabilities }
 
         -- Set up global keymaps
         vim.keymap.set('n', '<leader>[', vim.diagnostic.open_float)

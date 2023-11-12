@@ -14,6 +14,7 @@ return {
                 "jsonls",
                 "texlab",
                 "gopls",
+                "templ",
             }
         }
     end,

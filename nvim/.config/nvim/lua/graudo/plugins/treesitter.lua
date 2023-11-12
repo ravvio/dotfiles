@@ -3,13 +3,24 @@ return {
     build = ":TSUpdate",
     config = function()
         
+        local treesitter_parser_config = require "nvim-treesitter.parsers".get_parser_configs()
+        treesitter_parser_config.templ = {
+            install_info = {
+                url = "https://github.com/vrischmann/tree-sitter-templ.git",
+                files = {"src/parser.c", "src/scanner.c"},
+                branch = "master",
+            },
+        }
+
+        vim.treesitter.language.register('templ', 'templ')
+
         local config = require("nvim-treesitter.configs")
         config.setup({
             ensure_installed = {
                 "lua", "c", "rust", "norg", "javascript",
                 "typescript", "html", "css", "elixir", "python",
                 "json", "markdown", "latex", "dart", "latex",
-                "go", "ocaml"
+                "go", "ocaml", "templ"
             },
 
             auto_install = false,
@@ -27,5 +38,7 @@ return {
             }
 
         })
+
+
     end,
 }
