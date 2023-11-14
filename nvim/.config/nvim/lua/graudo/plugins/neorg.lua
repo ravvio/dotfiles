@@ -4,7 +4,6 @@ return {
     dependencies = {
         "nvim-lua/plenary.nvim",
         { "pysan3/neorg-templates", dependencies = "L3MON4D3/LuaSnip" },
-        { dir = "~/projects/neorg-worpop" },
     },
     config = function()
 
@@ -40,8 +39,6 @@ return {
                 ["core.summary"] = { -- Permits to create a summary of the workspace
                 },
                 ["external.templates"] = { -- Use templates
-                },
-                ["external.worpop"] = {
                 },
             },
         }

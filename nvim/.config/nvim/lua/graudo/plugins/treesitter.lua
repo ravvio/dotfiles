@@ -1,6 +1,9 @@
 return {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
+    dependencies = {
+        "nvim-treesitter/nvim-treesitter-textobjects",
+    },
     config = function()
         
         local treesitter_parser_config = require "nvim-treesitter.parsers".get_parser_configs()
@@ -19,7 +22,7 @@ return {
             ensure_installed = {
                 "lua", "c", "rust", "norg", "javascript",
                 "typescript", "html", "css", "elixir", "python",
-                "json", "markdown", "latex", "dart", "latex",
+                "json", "markdown", "dart", "latex",
                 "go", "ocaml", "templ"
             },
 
