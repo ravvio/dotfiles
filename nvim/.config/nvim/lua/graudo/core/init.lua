@@ -4,3 +4,4 @@ vim.g.loaded_netrwPlugin = 1
 
 require("graudo.core.remap")
 require("graudo.core.set")
+
