@@ -115,8 +115,3 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# Configure thefuck
-eval $(thefuck --alias)
-
-# Created by `pipx` on 2023-10-26 08:41:24
-export PATH="$PATH:/Users/alessioraviola/.local/bin"
