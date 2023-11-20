@@ -1,3 +1,4 @@
+export PATH="$PATH:/Users/alessioraviola/.local/bin"
 
 # GO
 alias air="$(go env GOPATH)/bin/air";
@@ -14,4 +15,5 @@ export PATH="$PY:$PATH"
 # Configure thefuck
 eval $(thefuck --alias)
 
-export PATH="${HOME}/.local/bin:$PATH"
+# Ruby Version manager
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
