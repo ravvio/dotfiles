@@ -1,4 +1,3 @@
-export PATH="$PATH:/Users/alessioraviola/.local/bin"
 
 # Rust
 export RUST="$HOME/.cargo/bin"
@@ -27,7 +26,7 @@ export PATH="/usr/local/share/python/:$PATH"
 export PATH="$PY:$PATH"
 
 # Configure thefuck
-if command -v fuck
+if command -v fuck &> /dev/null
 then
     eval $(thefuck --alias)
 fi
