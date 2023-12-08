@@ -23,7 +23,8 @@ return {
                 "lua", "c", "rust", "norg", "javascript",
                 "typescript", "html", "css", "elixir", "python",
                 "json", "markdown", "dart", "latex",
-                "go", "ocaml", "templ"
+                "go", "ocaml", "templ",
+                "c_sharp"
             },
 
             auto_install = false,

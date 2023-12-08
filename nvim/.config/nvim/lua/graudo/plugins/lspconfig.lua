@@ -5,22 +5,6 @@ return {
         "williamboman/mason-lspconfig.nvim"
     },
     config = function()
-        -- Set up lspconfig.
-        local capabilities = require('cmp_nvim_lsp').default_capabilities()
-        local lspconfig = require("lspconfig")
-
-        lspconfig.tsserver.setup { capabilities = capabilities }
-        lspconfig.rust_analyzer.setup { capabilities = capabilities }
-        lspconfig.lua_ls.setup { capabilities = capabilities,
-            diagnostics = { globals = { "vim" } }
-        }
-        lspconfig.pyright.setup { capabilities = capabilities }
-        lspconfig.html.setup { capabilities = capabilities }
-        lspconfig.jsonls.setup { capabilities = capabilities }
-        lspconfig.texlab.setup { capabilities = capabilities }
-        lspconfig.gopls.setup { capabilities = capabilities }
-        lspconfig.templ.setup { capabilities = capabilities }
-
         -- Set up global keymaps
         vim.keymap.set('n', '<leader>[', vim.diagnostic.open_float)
         vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
