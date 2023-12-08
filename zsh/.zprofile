@@ -1,5 +1,12 @@
 export PATH="$PATH:/Users/alessioraviola/.local/bin"
 
+# Rust
+export RUST="$HOME/.cargo/bin"
+export PATH="$PATH:$RUST"
+
+# Opam
+[[ ! -r /home/alessio/.opam/opam-init/init.zsh ]] || source /home/alessio/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+
 # GO
 alias air="$(go env GOPATH)/bin/air";
 alias templ="$(go env GOPATH)/bin/templ";
@@ -20,7 +27,10 @@ export PATH="/usr/local/share/python/:$PATH"
 export PATH="$PY:$PATH"
 
 # Configure thefuck
-eval $(thefuck --alias)
+if command -v fuck
+then
+    eval $(thefuck --alias)
+fi
 
 # Ruby Version manager
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
