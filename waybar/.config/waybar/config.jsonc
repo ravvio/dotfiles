@@ -9,10 +9,10 @@
         "hyprland/workspaces"
     ],
     "modules-center": [
-        "clock"
+        "clock",
+        "temperature"
     ],
     "modules-right": [
-        "temperature",
         "battery",
         "cpu",
         "backlight",
@@ -24,6 +24,12 @@
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format": "{:%a, %d %b  󱑒  %H:%M}"
     },
+    "temperature": {
+        "format": "{icon} {temperatureC}°C",
+        "format-icons": [
+            "󱃃", "󰔏", "󱃂"
+        ]
+    },
     "battery": {
         "states": {
             "good": 80,
@@ -34,7 +40,7 @@
         "format-charging": " {capacity}%",
         "format-plugged": " {capacity}%",
         "format-alt-click": "click-right",
-        "format-alt": "{icon}%",
+        "format-alt": "{icon}",
         "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
     },
     "pulseaudio": {

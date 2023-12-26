@@ -1,7 +1,19 @@
 
+# Zoxide
+if command -v zoxide &> /dev/null
+then
+    eval "$(zoxide init zsh)"
+fi
+
+# Fuzzy Finder
+[[ -f $HOME/.fzf.zsh ]] && source $HOME/.fzf.zsh
+[[ -f /usr/share/fzf/completition.zsh ]] && source /usr/share/fzf/completition.zsh
+[[ -f /usr/share/fzf/key-bindings.zsh ]] && source /usr/share/fzf/key-bindings.zsh
+export FZF_TMUX_OPTS='-p80%,60%'
+
 # Rust
 export RUST="$HOME/.cargo/bin"
-export PATH="$PATH:$RUST"
+export PATH="$RUST:$PATH"
 
 # Opam
 [[ ! -r /home/alessio/.opam/opam-init/init.zsh ]] || source /home/alessio/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
@@ -33,3 +45,18 @@ fi
 
 # Ruby Version manager
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+
+##### Aliases
+
+if command -v exa &> /dev/null
+then
+    alias ls="exa"
+    alias ll="exa -alh"
+    alias tree="exa --tree"
+fi
+
+if command -v z &> /dev/null
+then
+    alias cd="z"
+fi
