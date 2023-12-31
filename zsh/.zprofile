@@ -55,8 +55,3 @@ then
     alias ll="exa -alh"
     alias tree="exa --tree"
 fi
-
-if command -v z &> /dev/null
-then
-    alias cd="z"
-fi
