@@ -5,6 +5,7 @@ return {
         "Hoffs/omnisharp-extended-lsp.nvim",
         "neovim/nvim-lspconfig",
     },
+    lazy=true,
     config = function()
         require('mason-lspconfig').setup {
             ensure_installed = {
