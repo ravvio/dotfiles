@@ -1,6 +1,28 @@
 # Default Theme
 # If changes made here does not take effect, then try to re-create the tmux session to force reload.
 
+BG="#32302f"
+FG="#d0d0d0"
+
+bg0="#282828"
+bg1="#3c3836"
+bg2="#504945"
+bg3="#665c54"
+bg4="#7c6f64"
+
+gray="#928374"
+
+fg4="#a89984"
+fg3="#bdae93"
+fg2="#d5c4a1"
+fg1="#ebdbb2"
+fg0="#fbf1c7"
+
+orange="#fe8019"
+orangedark="#d65d0e"
+green="#b8bb26"
+greendark="#98971a"
+
 if patched_font_in_use; then
 	TMUX_POWERLINE_SEPARATOR_LEFT_BOLD=""
 	TMUX_POWERLINE_SEPARATOR_LEFT_THIN=""
@@ -13,8 +35,8 @@ else
 	TMUX_POWERLINE_SEPARATOR_RIGHT_THIN="❯"
 fi
 
-TMUX_POWERLINE_DEFAULT_BACKGROUND_COLOR=${TMUX_POWERLINE_DEFAULT_BACKGROUND_COLOR:-'235'}
-TMUX_POWERLINE_DEFAULT_FOREGROUND_COLOR=${TMUX_POWERLINE_DEFAULT_FOREGROUND_COLOR:-'255'}
+TMUX_POWERLINE_DEFAULT_BACKGROUND_COLOR=${TMUX_POWERLINE_DEFAULT_BACKGROUND_COLOR:-$BG}
+TMUX_POWERLINE_DEFAULT_FOREGROUND_COLOR=${TMUX_POWERLINE_DEFAULT_FOREGROUND_COLOR:-$FG}
 
 TMUX_POWERLINE_DEFAULT_LEFTSIDE_SEPARATOR=${TMUX_POWERLINE_DEFAULT_LEFTSIDE_SEPARATOR:-$TMUX_POWERLINE_SEPARATOR_RIGHT_BOLD}
 TMUX_POWERLINE_DEFAULT_RIGHTSIDE_SEPARATOR=${TMUX_POWERLINE_DEFAULT_RIGHTSIDE_SEPARATOR:-$TMUX_POWERLINE_SEPARATOR_LEFT_BOLD}
@@ -78,16 +100,17 @@ fi
 
 if [ -z $TMUX_POWERLINE_LEFT_STATUS_SEGMENTS ]; then
 	TMUX_POWERLINE_LEFT_STATUS_SEGMENTS=(
-		"hostname 248 235" \
-		"tmux_session_info 242 180" \
+		"tmux_session_info $fg1 $bg2" \
+		# "hostname $bg4 $fg2" \
+		# "pwd 239 188" \
 		#"ifstat 30 255" \
 		#"ifstat_sys 30 255" \
 		# "lan_ip 24 255 ${TMUX_POWERLINE_SEPARATOR_RIGHT_THIN}" \
 		# "wan_ip 24 255" \
-		"vcs_branch 239 188" \
-		#"vcs_compare 60 255" \
+		"vcs_branch $fg2" \
+		# "vcs_compare $bg4 $fg0" \
 		#"vcs_staged 64 255" \
-		#"vcs_modified 9 255" \
+		# "vcs_modified $bg4 $green" \
 		#"vcs_others 245 0" \
 	)
 fi
@@ -95,20 +118,19 @@ fi
 if [ -z $TMUX_POWERLINE_RIGHT_STATUS_SEGMENTS ]; then
 	TMUX_POWERLINE_RIGHT_STATUS_SEGMENTS=(
 		#"earthquake 3 0" \
-		"pwd 239 188" \
 		#"macos_notification_count 29 255" \
 		#"mailcount 9 255" \
 		# "now_playing 234 37" \
 	    # "cpu 240 136" \
-		"load 242 180" \
+		"load $bg2 $fg2" \
 		#"tmux_mem_cpu_load 234 136" \
-		"battery 245 235" \
+		"battery $bg4 $fg0" \
 		# "weather 37 255" \
 		#"rainbarf 0 ${TMUX_POWERLINE_DEFAULT_FOREGROUND_COLOR}" \
 		#"xkb_layout 125 117" \
-		"date_day 248 235" \
-		"date 248 235 ${TMUX_POWERLINE_SEPARATOR_LEFT_THIN}" \
-		"time 248 235 ${TMUX_POWERLINE_SEPARATOR_LEFT_THIN}" \
+		"date_day $fg3 $bg0" \
+		"date $fg3 $bg0 ${TMUX_POWERLINE_SEPARATOR_LEFT_THIN}" \
+		"time $fg3 $bg0 ${TMUX_POWERLINE_SEPARATOR_LEFT_THIN}" \
 		#"utc_time 235 136 ${TMUX_POWERLINE_SEPARATOR_LEFT_THIN}" \
 	)
 fi
