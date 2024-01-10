@@ -3,4 +3,6 @@ return {
     config = function()
         require("mason").setup()
     end,
+    lazy=false,
+    priority=1000,
 }
