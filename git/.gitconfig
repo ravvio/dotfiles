@@ -1,0 +1,16 @@
+[user]
+	email = alessio.raviola@codeploy.it
+	name = Alessio Raviola
+	signingKey = ""
+[gpg]
+	program = gpg
+[commit]
+	gpgSign = false
+[tag]
+	forceSignAnnotated = false
+[init]
+	defaultBranch = main
+[core]
+	editor = nvim
+[diff]
+    tool = nvimdiff
