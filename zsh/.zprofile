@@ -47,8 +47,8 @@ fi
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 # Flutter
-[[ -s "$HOME/dev/flutter/bin" ]] export PATH="$PATH:$HOME/dev/flutter/bin"
-[[ -s "$HOME/.pub-cache/bin" ]] export PATH="$PATH:$HOME/.pub-cache/bin"
+[[ -s "$HOME/dev/flutter/bin" ]] && export PATH="$PATH:$HOME/dev/flutter/bin"
+[[ -s "$HOME/.pub-cache/bin" ]] && export PATH="$PATH:$HOME/.pub-cache/bin"
 
 ##### Aliases
 
