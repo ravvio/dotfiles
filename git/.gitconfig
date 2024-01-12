@@ -14,3 +14,18 @@
 	editor = nvim
 [diff]
     tool = nvimdiff
+[merge]
+    tool = nvimdiff
+[pull]
+    rebase = false
+[alias]
+    ss = status
+    ci = commit
+    br = branch
+
+    difft = difftool
+    merget = mergetool
+
+	unstage = reset HEAD --
+    last = log -1 HEAD
+    logh = log --oneline --decorate --graph --all
