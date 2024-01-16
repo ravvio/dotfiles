@@ -1,5 +1,5 @@
 [user]
-	email = alessio.raviola@codeploy.it
+	email = alessio.raviola.98@gmail.com
 	name = Alessio Raviola
 	signingKey = ""
 [gpg]
@@ -29,3 +29,9 @@
 	unstage = reset HEAD --
     last = log -1 HEAD
     logh = log --oneline --decorate --graph --all
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential

@@ -21,7 +21,6 @@
     font-family: Monaspace Argon;
     font-size: 13px;
     min-height: 0;
-    margin: 0;
 }
 
 window#waybar {
@@ -42,38 +41,52 @@ window#waybar {
 #temperature,
 #workspaces,
 #cpu {
-    padding: 0px 10px;
-    margin-bottom: 2px;
     background-color: @black;
+    margin-top: 5px;
+    margin-bottom: 2px;
+    opacity: 1;
 }
 
 #tray {
-    margin-left: 10px;
-    border-radius: 0px 0px 0px 10px;
-}
-
-#clock {
-    color: @yellow;
-    border-radius: 0px 0px 0px 10px;
+    padding: 0px 10px;
+    margin: 5px 5px 0px 0px;
+    border-radius: 0px 50px 50px 0px;
+    color: @black;
+    border-width: 0 0 0 1px;
+    border-style: solid;
+    border-color: @ash;
 }
 
 #temperature {
-    color: @yellow;
-    border-radius: 0px 0px 10px 0px;
+    background-color: @ash;
+    color: @black;
+    margin-top: 5px;
+    margin-right: 5px;
+    border-radius: 50px 50px 50px 50px;
+    padding-left: 15px;
+    padding-right: 45px;
 }
 
-#battery, #pulseaudio, #brightness,
-#cpu, #temperature, #clock, #tray {
-    opacity: 0.9;
+
+#clock {
+    color: @yellow;
+    margin-top: 5px;
+    border-radius: 50px 50px 50px 50px;
+    padding: 5px 15px;
+}
+
+#battery, #cpu, #backlight, #pulseaudio, #pulseaudio.microphone {
+    padding: 0 10px;
 }
 
 #backlight {
+    padding-right: 10px;
     color: @yellow;
 }
 
 #battery {
-    margin-left: 10px;
-    border-radius: 0px 0px 0px 10px;
+    padding-left: 15px;
+    border-radius: 50px 0px 0px 50px;
 }
 
 #battery.full {
@@ -101,7 +114,7 @@ window#waybar {
 }
 
 #pulseaudio.microphone {
-    border-radius: 0px 0px 10px 0px;
+    color: @pink;
 }
 
 #cpu {
@@ -109,18 +122,23 @@ window#waybar {
 }
 
 #workspaces {
-    padding: 0px;
-    border-radius: 0px 0px 10px 0px;
-    opacity: 0.9;
+    padding: 5px 10px;
+    margin-top: 5px;
+    margin-left: 5px;
+    border-radius: 50px 50px 50px 50px;
+    opacity: 1;
 }
 
 #workspaces button {
     border-radius: 0px;
     color: @ash;
+    margin: 0;
 }
 
 #workspaces button.active {
     font-weight: bold;
-    color: @red;
+    color: @black;
+    background-color: @red;
+    border-radius: 50px;
 }
 
