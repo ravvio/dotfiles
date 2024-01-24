@@ -24,7 +24,7 @@ return {
                 "typescript", "html", "css", "elixir", "python",
                 "json", "markdown", "dart", "latex",
                 "go", "ocaml", "templ",
-                "c_sharp"
+                "c_sharp", "astro"
             },
 
             auto_install = false,

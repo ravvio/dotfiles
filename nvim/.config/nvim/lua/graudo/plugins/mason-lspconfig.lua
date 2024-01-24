@@ -18,7 +18,8 @@ return {
                 "texlab",
                 "gopls",
                 "templ",
-                "csharp_ls"
+                "csharp_ls",
+                "astro"
             }
         }
 
