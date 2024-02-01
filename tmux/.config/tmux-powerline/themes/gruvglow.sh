@@ -5,29 +5,34 @@ BG="#32302f"
 FG="#d0d0d0"
 
 bg0="#282828"
-bg1="#3c3836"
-bg2="#504945"
-bg3="#665c54"
-bg4="#7c6f64"
+bg1="#32302f"
+bg2="#45403d"
+bg3="#5a524c"
+bg4="#504945"
 
-gray="#928374"
+bgs="#32302f"
 
-fg4="#a89984"
-fg3="#bdae93"
-fg2="#d5c4a1"
-fg1="#ebdbb2"
-fg0="#fbf1c7"
+grey0="#7c6f64"
+grey1="#928374"
+grey2="#a89984"
 
-orange="#fe8019"
-orangedark="#d65d0e"
-green="#b8bb26"
-greendark="#98971a"
-red="#fb4934"
-reddark="#cc241d"
-yellow="#fabd2f"
-yellowdark="#d79921"
-blue="#83a598"
+fg0="#d4be98"
+fg1="#ddc7a1"
+
+orange="#e78a4e"
+
+green="#a9b665"
+greendark="#34381b"
+
+red="#ea6962"
+reddark="#402120"
+
+yellow="#d8a657"
+yellowdark="#4f422e"
+
+blue="#7daea3"
 bluedark="#458588"
+
 magenta="#d3869b"
 magentadark="#b14286"
 acqua="#8ec07c"
@@ -46,7 +51,7 @@ else
 fi
 
 TMUX_POWERLINE_DEFAULT_BACKGROUND_COLOR=${TMUX_POWERLINE_DEFAULT_BACKGROUND_COLOR:-$BG}
-TMUX_POWERLINE_DEFAULT_FOREGROUND_COLOR=${TMUX_POWERLINE_DEFAULT_FOREGROUND_COLOR:-$FG}
+TMUX_POWERLINE_DEFAULT_FOREGROUND_COLOR=${TMUX_POWERLINE_DEFAULT_FOREGROUND_COLOR:-$fg0}
 
 TMUX_POWERLINE_DEFAULT_LEFTSIDE_SEPARATOR=${TMUX_POWERLINE_DEFAULT_LEFTSIDE_SEPARATOR:-$TMUX_POWERLINE_SEPARATOR_RIGHT_BOLD}
 TMUX_POWERLINE_DEFAULT_RIGHTSIDE_SEPARATOR=${TMUX_POWERLINE_DEFAULT_RIGHTSIDE_SEPARATOR:-$TMUX_POWERLINE_SEPARATOR_LEFT_BOLD}
@@ -54,15 +59,28 @@ TMUX_POWERLINE_DEFAULT_RIGHTSIDE_SEPARATOR=${TMUX_POWERLINE_DEFAULT_RIGHTSIDE_SE
 # See man tmux.conf for additional formatting options for the status line.
 # The `format regular` and `format inverse` functions are provided as conveniences
 
+myformat() {
+	local type="$1"
+
+	case $type in
+		primary)
+            echo "fg=$red,bg=$BG,bold,noitalics,nounderscore"
+			;;
+		secondary)
+			echo "fg=$FG,bg=$BG,nobold,noitalics,nounderscore"
+			;;
+		*)
+			;;
+	esac
+}
+
 if [ -z $TMUX_POWERLINE_WINDOW_STATUS_CURRENT ]; then
 	TMUX_POWERLINE_WINDOW_STATUS_CURRENT=(
-		"#[$(format inverse)]" \
-		"$TMUX_POWERLINE_DEFAULT_LEFTSIDE_SEPARATOR" \
+		"#[$(myformat primary)]" \
+		"[" \
 		" #I#F " \
-		"$TMUX_POWERLINE_SEPARATOR_RIGHT_THIN" \
 		" #W " \
-		"#[$(format regular)]" \
-		"$TMUX_POWERLINE_DEFAULT_LEFTSIDE_SEPARATOR"
+		"]"
 	)
 fi
 
@@ -76,7 +94,6 @@ if [ -z $TMUX_POWERLINE_WINDOW_STATUS_FORMAT ]; then
 	TMUX_POWERLINE_WINDOW_STATUS_FORMAT=(
 		"#[$(format regular)]" \
 		"  #I#{?window_flags,#F, } " \
-		"$TMUX_POWERLINE_SEPARATOR_RIGHT_THIN" \
 		" #W "
 	)
 fi
@@ -110,17 +127,17 @@ fi
 
 if [ -z $TMUX_POWERLINE_LEFT_STATUS_SEGMENTS ]; then
 	TMUX_POWERLINE_LEFT_STATUS_SEGMENTS=(
-		"tmux_session_info $fg1 $bg2" \
-		# "hostname $bg4 $fg2" \
-		# "pwd 239 188" \
+		"tmux_session_info $fg1 $bg0" \
+		"hostname $bg2 $fg0" \
+		"pwd $bg3 $fg1" \
 		#"ifstat 30 255" \
 		#"ifstat_sys 30 255" \
 		# "lan_ip 24 255 ${TMUX_POWERLINE_SEPARATOR_RIGHT_THIN}" \
 		# "wan_ip 24 255" \
-		"vcs_branch $fg2" \
+		# "vcs_branch $bgs $fg0" \
 		# "vcs_compare $bg4 $fg0" \
 		#"vcs_staged 64 255" \
-		# "vcs_modified $bg4 $green" \
+		#"vcs_modified $bg4 $green" \
 		#"vcs_others 245 0" \
 	)
 fi
@@ -130,17 +147,17 @@ if [ -z $TMUX_POWERLINE_RIGHT_STATUS_SEGMENTS ]; then
 		#"earthquake 3 0" \
 		#"macos_notification_count 29 255" \
 		#"mailcount 9 255" \
-		# "now_playing 234 37" \
+		#"now_playing $bg1 $grey2" \
 	    # "cpu 240 136" \
-		"load $bg2 $fg2" \
+		"load $bg3 $fg1" \
 		#"tmux_mem_cpu_load 234 136" \
-		"battery $bg4 $fg0" \
+		"battery $bg2 $fg0" \
 		# "weather 37 255" \
 		#"rainbarf 0 ${TMUX_POWERLINE_DEFAULT_FOREGROUND_COLOR}" \
 		#"xkb_layout 125 117" \
-		"date_day $fg3 $bg0" \
-		"date $fg3 $bg0 ${TMUX_POWERLINE_SEPARATOR_LEFT_THIN}" \
-		"time $fg3 $bg0 ${TMUX_POWERLINE_SEPARATOR_LEFT_THIN}" \
+		"date_day $fg1 $bg0" \
+		"date $fg1 $bg0 ${TMUX_POWERLINE_SEPARATOR_LEFT_THIN}" \
+		"time $fg1 $bg0 ${TMUX_POWERLINE_SEPARATOR_LEFT_THIN}" \
 		#"utc_time 235 136 ${TMUX_POWERLINE_SEPARATOR_LEFT_THIN}" \
 	)
 fi
