@@ -1,0 +1,31 @@
+
+@theme "gruvbox-dark"
+
+// Config //
+configuration {
+    modi:                        "drun,filebrowser,window,run";
+    show-icons:                  true;
+    display-drun:                "";
+    display-run:                 "";
+    display-filebrowser:         "";
+    display-window:              "";
+    drun-display-format:         "{name}";
+    window-format:               "{w}{t}";
+    font:                        "Monaspace Krypton 12";
+    icon-theme:                  "Tela-circle-dracula";
+}
+
+// Main //
+window {
+    height:                      590px;
+    width:                       1140px;
+    transparency:                "real";
+    fullscreen:                  false;
+    enabled:                     true;
+    cursor:                      "default";
+    spacing:                     0px;
+    padding:                     0px;
+    border:                      2px;
+    border-radius:               5px;
+    background-color:            transparent;
+}
