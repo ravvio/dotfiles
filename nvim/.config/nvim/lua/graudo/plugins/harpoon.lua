@@ -1,5 +1,9 @@
 return {
     "ThePrimeagen/harpoon",
+    lazy=true,
+    dependecies = {
+        "nvim-telescope/telescope.nvim"
+    },
     config = function()
         require("telescope").load_extension("harpoon")
 
