@@ -24,7 +24,7 @@
 }
 
 window#waybar {
-    background: rgba(21, 18, 27, 0);
+    background: rgba(40, 40, 40, 0.5);
     color: @white;
     padding-top: 0;
     padding-bottom: 0;
@@ -43,13 +43,13 @@ window#waybar {
 #cpu {
     background-color: @black;
     margin-top: 5px;
-    margin-bottom: 2px;
+    margin-bottom: 5px;
     opacity: 1;
 }
 
 #tray {
     padding: 0px 10px;
-    margin: 5px 5px 0px 0px;
+    margin-right: 5px;
     border-radius: 0px 50px 50px 0px;
     color: @black;
     border-width: 0 0 0 1px;

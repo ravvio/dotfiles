@@ -30,8 +30,8 @@ return {
             'cmp-buffer',
             'cmp-path',
             'cmp-cmdline',
-            'cmp-luasnip',
-            'luasnip'
+            'cmp_luasnip',
+            'LuaSnip'
         },
 
         config = function()
