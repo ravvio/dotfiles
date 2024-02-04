@@ -5,7 +5,7 @@ return {
         "nvim-treesitter/nvim-treesitter-textobjects",
     },
     config = function()
-        
+
         local treesitter_parser_config = require "nvim-treesitter.parsers".get_parser_configs()
         treesitter_parser_config.templ = {
             install_info = {
@@ -16,13 +16,14 @@ return {
         }
 
         vim.treesitter.language.register('templ', 'templ')
+        vim.treesitter.language.register('markdown', 'mdx')
 
         local config = require("nvim-treesitter.configs")
         config.setup({
             ensure_installed = {
                 "lua", "c", "rust", "norg", "javascript",
                 "typescript", "html", "css", "elixir", "python",
-                "json", "markdown", "dart", "latex",
+                "json", "markdown", "markdown_inline", "dart", "latex",
                 "go", "ocaml", "templ",
                 "c_sharp", "astro"
             },

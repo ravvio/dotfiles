@@ -5,10 +5,6 @@ local i = ls.insert_node
 local fmt = require("luasnip.extras.fmt").fmt
 local rep = require("luasnip.extras").rep
 
-ls.add_snippets("all", {
-    s("exa", t("Example"))
-})
-
 ls.add_snippets("dart", {
     s("nw", fmt([[
     class {1} extends StatelessWidget {{
@@ -22,8 +18,12 @@ ls.add_snippets("dart", {
         }}
     }}
     ]], {
-        i(1, "x"),
+        i(1),
         rep(1),
-        i(2, "y")
+        i(3)
     }))
 })
+
+local markdown = require("graudo.snippets.markdown");
+ls.add_snippets("mdx", markdown)
+ls.add_snippets("md", markdown)

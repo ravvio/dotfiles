@@ -59,8 +59,8 @@ return {
                     --     else fallback()
                     --     end
                     -- end, { "i", "s" }),
-                    ["<C-y>"] = cmp.mapping.confirm({ select = true }),
-                    ["<C-Space>"] = cmp.mapping.complete(),
+                    ["<C-Space>"] = cmp.mapping.confirm({ select = true }),
+                    ["<C-y>"] = cmp.mapping.complete(),
                 }),
                 sources = cmp.config.sources({
                     {name = 'nvim_lua'},

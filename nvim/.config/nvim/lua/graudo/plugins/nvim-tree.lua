@@ -32,8 +32,7 @@ return {
     local api = require "nvim-tree.api"
 
     -- custom mappings
-    vim.keymap.set('n', '<leader>e', api.tree.toggle)
-    vim.keymap.set('n', '<C-e>',     api.tree.focus)
+    vim.keymap.set('n', '<leader>t', api.tree.toggle)
 
   end,
 }
