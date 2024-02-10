@@ -33,6 +33,13 @@ export DOTNET_ROOT="${HOME}/.dotnet"
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
+# Load Angular CLI autocompletion.
+if command -v ng &> /dev/null
+then
+    source <(ng completion script)
+fi
+
+
 # Python
 export PATH="/usr/local/share/python/:$PATH"
 export PATH="$PY:$PATH"
@@ -43,15 +50,25 @@ then
     eval $(thefuck --alias)
 fi
 
-# Ruby Version manager
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
 # Android
 [[ -s "$HOME/Library/Android/sdk/platform-tools" ]] && export PATH="$HOME/Library/Android/sdk/platform-tools:$PATH"
 
 # Flutter
 [[ -s "$HOME/dev/flutter/bin" ]] && export PATH="$HOME/dev/flutter/bin:$PATH"
 [[ -s "$HOME/.pub-cache/bin" ]] && export PATH="$HOME/.pub-cache/bin:$PATH"
+
+# bun completions
+[ -s "/home/alessio/.bun/_bun" ] && source "/home/alessio/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# Ruby Version manager
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
 
 ##### Aliases
 
