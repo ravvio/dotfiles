@@ -23,7 +23,3 @@ ls.add_snippets("dart", {
         i(3)
     }))
 })
-
-local markdown = require("graudo.snippets.markdown");
-ls.add_snippets("mdx", markdown)
-ls.add_snippets("md", markdown)

@@ -7,7 +7,8 @@ return {
     config = function()
         require("luasnip.loaders.from_lua").load({
             paths = {
-                "~/.config/nvim/luasnippets"
+                "~/.config/nvim/luasnippets",
+                "~/.config/nvim/lua/graudo/snippets"
             }
         })
 

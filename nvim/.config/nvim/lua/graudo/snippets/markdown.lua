@@ -11,6 +11,6 @@ return {
         i(1),
         f(function(name)
             return string.lower(name[1][1]):gsub(" ", "-")
-        end, {1})
+        end, {1}),
     })
 }
