@@ -57,6 +57,12 @@ fi
 [[ -s "$HOME/dev/flutter/bin" ]] && export PATH="$HOME/dev/flutter/bin:$PATH"
 [[ -s "$HOME/.pub-cache/bin" ]] && export PATH="$HOME/.pub-cache/bin:$PATH"
 
+# Load Angular CLI autocompletion.
+if command -v ng &> /dev/null
+then
+    source <(ng completion script)
+fi
+
 # bun completions
 [ -s "/home/alessio/.bun/_bun" ] && source "/home/alessio/.bun/_bun"
 
@@ -69,6 +75,7 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+
 
 ##### Aliases
 

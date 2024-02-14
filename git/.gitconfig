@@ -4,11 +4,11 @@
 [gpg]
 	program = gpg
 [commit]
-	gpgSign = false
+	gpgsign = false
 [tag]
-	forceSignAnnotated = false
+	forcesignannotated = false
 [init]
-	defaultBranch = main
+	defaultbranch = main
 [core]
 	editor = nvim
 [diff]
@@ -17,6 +17,10 @@
     tool = nvimdiff
 [pull]
     rebase = false
+[column]
+	ui = auto
+[branch]
+    sort = -committerdate
 [alias]
     ss = status
     ci = commit
@@ -25,12 +29,22 @@
     difft = difftool
     merget = mergetool
 
-	unstage = reset HEAD --
-    last = log -1 HEAD
+	unstage = reset head --
+    last = log -1 head
     logh = log --oneline --decorate --graph --all
+
+    blameig = blame -wccc
+
+[maintenance]
+    auto = false
+    strategy = incremental
+
 [credential "https://github.com"]
 	helper = 
 	helper = !/usr/bin/gh auth git-credential
 [credential "https://gist.github.com"]
 	helper = 
 	helper = !/usr/bin/gh auth git-credential
+
+[includeIf "gitdir:~/codeploy/"]
+    path = ~/codeploy/.gitconfig
