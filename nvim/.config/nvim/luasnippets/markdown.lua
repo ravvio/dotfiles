@@ -10,7 +10,10 @@ local markdown = {
     s("ln", {
         t"[", i(1), t"](",
         f(function(name)
-            return string.lower(name[1][1]):gsub(" ", "-")
+            return string.lower(name[1][1])
+                :gsub(" ", "-")
+                :gsub("'", "-")
+                :gsub('"', "-")
         end, {1}),
         t")"
     })
