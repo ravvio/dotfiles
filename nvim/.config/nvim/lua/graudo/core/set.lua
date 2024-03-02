@@ -22,8 +22,24 @@ vim.opt.backup = false
 vim.opt.undofile = true
 
 -- Search
-vim.opt.hlsearch = false
 vim.opt.incsearch = true
+vim.opt.hlsearch = false
+-- Case-insensitive searching UNLESS \C or capital in search
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+-- Preview substitutions live, as you type!
+vim.opt.inccommand = 'split'
+
+-- Don't show the mode, since it's already in status line
+vim.opt.showmode = false
+
+-- Decrease update time
+vim.opt.updatetime = 250
+vim.opt.timeoutlen = 300
+
+-- How certain whitespace will be shown
+vim.opt.list = true
+vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
 -- Colors
 vim.opt.termguicolors = true
@@ -33,5 +49,4 @@ vim.opt.scrolloff = 8
 
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
-vim.opt.updatetime = 50
 vim.opt.colorcolumn = "80"
