@@ -11,6 +11,9 @@ fi
 [[ -f /usr/share/fzf/key-bindings.zsh ]] && source /usr/share/fzf/key-bindings.zsh
 export FZF_TMUX_OPTS='-p80%,60%'
 
+# Opam
+[[ ! -r /home/alessio/.opam/opam-init/init.zsh ]] || source /home/alessio/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+
 # Rust
 export RUST="$HOME/.cargo/bin"
 export PATH="$RUST:$PATH"
