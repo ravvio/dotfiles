@@ -32,16 +32,17 @@ alias godot="${HOME}/tools/Godot_v4.1.3/Godot_v4.1.3-stable_mono_linux.x86_64"
 export PATH="${HOME}/.dotnet/tools:${HOME}/.dotnet:$PATH"
 export DOTNET_ROOT="${HOME}/.dotnet"
 
-# NVM
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+# NVM (fast loading -> https://superuser.com/questions/236953/zsh-starts-incredibly-slowly)
+export NVM_DIR="$HOME/.nvm"
+#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+alias nvm="unalias nvm; [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"; nvm $@"
 
 # Load Angular CLI autocompletion.
 if command -v ng &> /dev/null
 then
     source <(ng completion script)
 fi
-
 
 # Python
 export PATH="/usr/local/share/python/:$PATH"
