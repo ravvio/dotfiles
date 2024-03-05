@@ -33,10 +33,6 @@ vim.keymap.set("n", "Q", "<nop>")
 -- New tmux session
 vim.keymap.set("n", "<C-f>", "<Cmd>silent !tmux neww tmux-sessionizer<CR>")
 
-vim.keymap.set("n", "<leader>f", function()
-  vim.lsp.buf.format()
-end)
-
 -- Quickfix navigation
 vim.keymap.set("n", "<leader>k>", "<Cmd>cnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<Cmd>cprev<CR>zz")
