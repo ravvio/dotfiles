@@ -31,7 +31,7 @@ return {
         end, { silent = true })
 
         -- Toggle choice in choice nodes
-        vim.keymap.set({ "i", "s" }, "<C-l>", function()
+        vim.keymap.set({ "i", "s" }, "<C-o>", function()
             if luasnip.choice_active() then
                 luasnip.change_choice(1)
             end
