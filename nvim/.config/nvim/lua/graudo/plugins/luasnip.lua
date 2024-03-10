@@ -17,14 +17,14 @@ return {
             updateevents = "TextChanged,TextChangedI"
         }
 
-        -- <C-j> to move forward in the snippet
-        -- <C-k> to move backward
-        vim.keymap.set({ "i", "s" }, "<C-j>", function()
+        -- <C-l> to move forward in the snippet
+        -- <C-h> to move backward
+        vim.keymap.set({ "i", "s" }, "<C-l>", function()
             if luasnip.expand_or_locally_jumpable() then
                 luasnip.expand_or_jump()
             end
         end, { silent = true })
-        vim.keymap.set({ "i", "s" }, "<C-k>", function()
+        vim.keymap.set({ "i", "s" }, "<C-h>", function()
             if luasnip.jumpable(-1) then
                 luasnip.jump(-1)
             end
