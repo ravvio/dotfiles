@@ -17,8 +17,24 @@ return {
             end,
         },
         { 'nvim-telescope/telescope-ui-select.nvim' },
+        'famiu/bufdelete.nvim'
     },
     config = function()
+
+        local action_state = require("telescope.actions.state")
+        local actions = {}
+        actions.delete_buf = function(prompt_bufnr)
+            local current_picker = action_state.get_current_picker(prompt_bufnr)
+            current_picker:delete_selection(function(selection)
+                local force = vim.api.nvim_buf_get_option(selection.bufnr, "buftype") == "termina"
+                local ok = pcall(require('bufdelete').bufdelete, selection.bufnr, { force = force })
+                return ok
+            end)
+        end
+
+        local transform_mod = require("telescope.actions.mt").transform_mod
+        actions = transform_mod(actions)
+
         require("telescope").setup {
             mappings = {
             },
@@ -31,6 +47,11 @@ return {
                 },
                 lsp_references = {
                     theme = "ivy"
+                },
+                buffers = {
+                    mappings = {
+                        ["C-d"] = actions.delete_buf
+                    }
                 }
             },
             extensions = {
