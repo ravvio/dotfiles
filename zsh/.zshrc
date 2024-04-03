@@ -118,3 +118,9 @@ TRAPEXIT() {
         . ~/.zlogout
     fi
 }
+
+## [Completion]
+## Completion scripts setup. Remove the following line to uninstall
+[[ -f /Users/alessioraviola/.dart-cli-completion/zsh-config.zsh ]] && . /Users/alessioraviola/.dart-cli-completion/zsh-config.zsh || true
+## [/Completion]
+
