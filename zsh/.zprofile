@@ -83,9 +83,10 @@ export PATH="$PATH:$HOME/.rvm/bin"
 
 ##### Aliases
 
-if command -v exa &> /dev/null
+if command -v eza &> /dev/null
 then
-    alias ls="exa"
-    alias ll="exa -alh"
-    alias tree="exa --tree"
+    alias ls="eza"
+    alias tree="eza --tree"
 fi
+
+alias ll="ls -alh"
