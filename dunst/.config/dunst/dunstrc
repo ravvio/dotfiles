@@ -1,0 +1,18 @@
+[global]
+icon_corner_radius = 10
+font = Monaspace Argon 11
+corner_radius = 10
+frame_width = 2
+frame_color = "#bfc3ab"
+
+[urgency_low]
+background = "#13505B"
+foreground = "#d0d0d0"
+
+[urgency_normal]
+background = "#13505B"
+foreground = "#d4be98"
+
+[urgency_high]
+background = "#282834"
+foreground = "#bfc3ab"

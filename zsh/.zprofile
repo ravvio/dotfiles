@@ -90,3 +90,7 @@ then
 fi
 
 alias ll="ls -alh"
+
+##### Path for my stuff
+scripts="$HOME/scripts"
+export PATH="$PATH:$scripts"
