@@ -103,7 +103,9 @@ return {
             "html",
             "jsonls",
             "gopls",
-            "astro"
+            "astro",
+            "dockerls",
+            "docker_compose_language_server"
         })
 
         require("mason-tool-installer").setup {

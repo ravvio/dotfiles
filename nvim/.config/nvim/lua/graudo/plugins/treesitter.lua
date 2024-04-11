@@ -22,9 +22,9 @@ return {
         config.setup({
             ensure_installed = {
                 "lua", "c", "rust", "norg", "javascript",
-                "typescript", "html", "css", "elixir", "python",
+                "typescript", "html", "css", "python",
                 "json", "markdown", "markdown_inline", "dart", "latex",
-                "go", "ocaml", "templ",
+                "go", "ocaml", "templ", "dockerfile", "bash",
                 "c_sharp", "astro"
             },
 
