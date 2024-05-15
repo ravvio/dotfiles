@@ -31,6 +31,7 @@ return {
             'cmp-path',
             'cmp-cmdline',
             'cmp_luasnip',
+            'vim-dadbod-completion',
             'LuaSnip'
         },
 
@@ -83,6 +84,15 @@ return {
                     { name = 'buffer' },
                 })
             })
+
+            -- SQL using dadbod
+            cmp.setup.filetype('sql', {
+                sources = {
+                    { name = 'vim-dadbod-completion' },
+                    { name = 'buffer' }
+                }
+            })
+
 
             -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
             cmp.setup.cmdline({ '/', '?' }, {
