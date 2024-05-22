@@ -77,3 +77,8 @@ TRAPEXIT() {
         . ~/.zlogout
     fi
 }
+
+# Pyenv
+eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
