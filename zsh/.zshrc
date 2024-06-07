@@ -78,7 +78,97 @@ TRAPEXIT() {
     fi
 }
 
+# .NET
+export PATH="${HOME}/.dotnet/tools:${HOME}/.dotnet:$PATH"
+export DOTNET_ROOT="${HOME}/.dotnet"
+
+# Python
+export PATH="/usr/local/share/python/:$PATH"
+export PATH="$PY:$PATH"
+
 # Pyenv
-eval "$(pyenv init --path)"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+
+if command -v pyenv &> /dev/null
+then
+  eval "$(pyenv init --path)"
+  eval "$(pyenv init -)"
+  eval "$(pyenv virtualenv-init -)"
+fi
+
+# Zoxide
+if command -v zoxide &> /dev/null
+then
+    eval "$(zoxide init zsh)"
+fi
+
+# Fuzzy Finder
+[[ -f $HOME/.fzf.zsh ]] && source $HOME/.fzf.zsh
+[[ -f /usr/share/fzf/completition.zsh ]] && source /usr/share/fzf/completition.zsh
+[[ -f /usr/share/fzf/key-bindings.zsh ]] && source /usr/share/fzf/key-bindings.zsh
+export FZF_TMUX_OPTS='-p80%,60%'
+
+# Opam
+[[ ! -r /home/alessio/.opam/opam-init/init.zsh ]] || source /home/alessio/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+
+# NVM
+export NVM_DIR="$HOME/.nvm"
+# (fast loading -> https://superuser.com/questions/236953/zsh-starts-incredibly-slowly)
+#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+alias nvm="unalias nvm; [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"; nvm $@"
+
+# Rust
+export RUST="$HOME/.cargo/bin"
+export PATH="$RUST:$PATH"
+
+# Load Angular CLI autocompletion.
+if command -v ng &> /dev/null
+then
+    source <(ng completion script)
+fi
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+# bun copletions
+[ -s "/home/alessio/.bun/_bun" ] && source "/home/alessio/.bun/_bun"
+
+# Thefuck
+if command -v fuck &> /dev/null
+then
+    eval $(thefuck --alias)
+fi
+
+# Ruby Version manager
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+export PATH="$PATH:$HOME/.rvm/bin"
+
+# Android
+[[ -s "$HOME/Library/Android/sdk/platform-tools" ]] && export PATH="$HOME/Library/Android/sdk/platform-tools:$PATH"
+
+# Flutter
+[[ -s "$HOME/dev/flutter/bin" ]] && export PATH="$HOME/dev/flutter/bin:$PATH"
+[[ -s "$HOME/.pub-cache/bin" ]] && export PATH="$HOME/.pub-cache/bin:$PATH"
+
+### Path for my stuff
+
+scripts="$HOME/scripts"
+export PATH="$PATH:$scripts"
+
+### Aliases
+
+# Eza
+if command -v eza &> /dev/null
+then
+    alias ls="eza"
+    alias tree="eza --tree"
+fi
+
+# Nice list
+alias ll="ls -alh"
+
+# GO
+alias air="$(go env GOPATH)/bin/air";
+alias templ="$(go env GOPATH)/bin/templ";

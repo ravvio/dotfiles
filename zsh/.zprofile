@@ -70,9 +70,6 @@ fi
 # bun completions
 [ -s "/home/alessio/.bun/_bun" ] && source "/home/alessio/.bun/_bun"
 
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
 
 # Ruby Version manager
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
