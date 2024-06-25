@@ -3,7 +3,6 @@ return {
     dependencies = {
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
-        'WhoIsSethDaniel/mason-tool-installer.nvim',
         { 'j-hui/fidget.nvim', opts = {} },
     },
     config = function()
@@ -91,26 +90,8 @@ return {
         }
 
         -- Setup mason
+        -- Ensuring installation is done in mason-tool-installer
         require("mason").setup()
-
-        -- Ensure installations
-        local ensure_installed = vim.tbl_keys(servers or {})
-        vim.list_extend(ensure_installed, {
-            "stylua", -- Lua formatting
-            "rust_analyzer",
-            "tsserver",
-            "pyright",
-            "html",
-            "jsonls",
-            "gopls",
-            "astro",
-            "dockerls",
-            "docker_compose_language_service"
-        })
-
-        require("mason-tool-installer").setup {
-            ensure_installed = ensure_installed
-        }
 
         -- Setup Servers
         require('mason-lspconfig').setup({
