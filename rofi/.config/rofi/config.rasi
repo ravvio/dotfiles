@@ -1,31 +1,146 @@
 
-@theme "gruvbox-dark"
+// @theme "gruvbox-dark"
 
 // Config //
 configuration {
     modi:                        "drun,filebrowser,window,run";
     show-icons:                  true;
-    display-drun:                "";
-    display-run:                 "";
-    display-filebrowser:         "";
-    display-window:              "";
+    display-drun:                " ";
+    display-run:                 " ";
+    display-filebrowser:         " ";
+    display-window:              " ";
     drun-display-format:         "{name}";
     window-format:               "{w}{t}";
-    font:                        "Monaspace Krypton 12";
     icon-theme:                  "Tela-circle-dracula";
 }
 
-// Main //
-window {
-    height:                      590px;
-    width:                       1140px;
-    transparency:                "real";
-    fullscreen:                  false;
-    enabled:                     true;
-    cursor:                      "default";
-    spacing:                     0px;
-    padding:                     0px;
-    border:                      2px;
-    border-radius:               5px;
-    background-color:            transparent;
+* {
+    font: "Monaspace Krypton 12";
+    highlight: bold italic;
+
+    bg0:    #282828;
+    bg1:    #32302F;
+    fg0:    #D4BE98;
+    accent: #7DAEA3;
+    urgent: #E78A4E;
+
+    background-color: transparent;
+    foreground: @fg0;
+
+    margin: 0;
+    padding: 0;
+    spacing: 0;
 }
+
+window {
+    location: center;
+    width:    960;
+
+    background-color: @bg0;
+
+    border: 2px;
+    border-radius: 5px;
+}
+
+inputbar {
+    spacing: 8px;
+    padding: 8px;
+
+    background-color: @bg1;
+    text-color: @fg0;
+}
+
+prompt, entry, element-icon, element-text {
+    vertical-align: 0.5;
+    text-color: @fg0;
+}
+
+prompt {
+    text-color: @accent;
+}
+
+textbox {
+    padding: 8px;
+    background-color: @bg1;
+    highlight: @highlight;
+}
+
+listview {
+    border: 2px solid 0 0;
+    padding: 4px 0;
+    lines: 16;
+    columns: 1;
+    spacing: 2px;
+
+    fixed-height: true;
+}
+
+element {
+    border: 0;
+    padding: 4px 8px;
+    spacing: 16px;
+    background-color: @bg0;
+}
+
+element.normal.normal {
+    background-color: @bg0;
+    text-color: @fg0;
+}
+
+element.alternate.normal {
+    background-color: @bg1;
+    text-color: @fg0;
+}
+
+element.normal.urgent {
+    background-color: @bg0;
+    text-color: @urgent;
+}
+
+element.alternate.urgent {
+    background-color: @bg1;
+    text-color: @urgent;
+}
+
+element.normal.active {
+    text-color: @accent;
+}
+
+element.alternate.active {
+    text-color: @accent;
+}
+
+element.selected.normal, element.selected.active,element.selected.urgent {
+    text-color: @bg0;
+}
+
+element.selected.normal, element.selected.active {
+    background-color: @accent;
+}
+
+element.selected.urgent {
+    background-color: @urgent;
+}
+
+element-icon {
+    size: 1em;
+}
+
+element-text {
+    text-color: inherit;
+}
+
+// Main //
+// window {
+//     height:                      590px;
+//     width:                       840px;
+//     transparency:                "real";
+//     fullscreen:                  false;
+//     enabled:                     true;
+//     cursor:                      "default";
+//     spacing:                     0px;
+//     padding:                     0px;
+//     border:                      2px;
+//     border-radius:               5px;
+//     background-color:            transparent;
+// }
