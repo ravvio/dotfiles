@@ -71,13 +71,6 @@ eval "$(fzf --zsh)"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# Exit function
-TRAPEXIT() {
-    if [[ ! -o login ]]; then
-        . ~/.zlogout
-    fi
-}
-
 # .NET
 export PATH="${HOME}/.dotnet/tools:${HOME}/.dotnet:$PATH"
 export DOTNET_ROOT="${HOME}/.dotnet"
@@ -110,7 +103,7 @@ fi
 export FZF_TMUX_OPTS='-p80%,60%'
 
 # Opam
-[[ ! -r /home/alessio/.opam/opam-init/init.zsh ]] || source /home/alessio/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+[[ ! -r "$HOME/.opam/opam-init/init.zsh" ]] || source "$HOME/.opam/opam-init/init.zsh"  > /dev/null 2> /dev/null
 
 # NVM
 export NVM_DIR="$HOME/.nvm"
@@ -152,12 +145,16 @@ export PATH="$PATH:$HOME/.rvm/bin"
 [[ -s "$HOME/dev/flutter/bin" ]] && export PATH="$HOME/dev/flutter/bin:$PATH"
 [[ -s "$HOME/.pub-cache/bin" ]] && export PATH="$HOME/.pub-cache/bin:$PATH"
 
+# GO
+export GOPATH="$(go env GOPATH)"
+export PATH="$GOPATH/bin:$PATH"
+
 ### Path for my stuff
 
 scripts="$HOME/scripts"
 export PATH="$PATH:$scripts"
 
-### Aliases
+### Misc Aliases
 
 # Eza
 if command -v eza &> /dev/null
@@ -169,6 +166,3 @@ fi
 # Nice list
 alias ll="ls -alh"
 
-# GO
-alias air="$(go env GOPATH)/bin/air";
-alias templ="$(go env GOPATH)/bin/templ";
