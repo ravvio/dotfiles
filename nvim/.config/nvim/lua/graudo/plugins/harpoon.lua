@@ -31,11 +31,14 @@ return {
             }):find()
         end
 
-        vim.keymap.set("n", "<Leader>a", function() harpoon:list():append() end, { desc = "[A]dd to Harpoon" })
+        vim.keymap.set("n", "<Leader>a", function() harpoon:list():add() end, { desc = "[A]dd to Harpoon" })
         vim.keymap.set("n", "<C-e>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, { desc = "Toggle Harpoon quick menu" })
         vim.keymap.set("n", "<Leader>e",
             function()
-                toggle_telescope(harpoon:list())
+                toggle_telescope(
+                    harpoon:list(),
+                    require("telescope.themes").get_dropdown{}
+                )
             end,
             { desc = "Toggle Harpoon telescope" }
         )
