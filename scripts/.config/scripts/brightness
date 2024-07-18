@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+increase_brightness() {
+    brightnessctl set 10%+
+}
+
+decrease_brightness() {
+    brightnessctl set 10%-
+}
+
+if [[ "$1" == "--increase-brightness" ]]; then
+    increase_brightness
+elif [[ "$1" == "--decrease-brightness" ]]; then
+    decrease_brightness
+fi
