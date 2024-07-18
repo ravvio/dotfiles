@@ -13,10 +13,11 @@
 @define-color violet #3f3244;
 @define-color purple #2f2235;
 
-
+@define-color BG #32302f;
 @define-color bg0 #282828;
 
 @define-color fg #BFC3BA;
+@define-color FG #d0d0d0;
 @define-color fg0 #D4BE98;
 @define-color fg1 #DDC7A1;
 
@@ -61,6 +62,21 @@ window#waybar {
     background-color: @bg0;
 }
 
+#tray menu {
+    background-color: @bg0;
+    border-color: @bg0;
+}
+
+#tray menu menuitem {
+    color: @fg;
+}
+
+#tray menu menuitem:hover {
+    color: @FG;
+    background-color: @BG;
+    border-color: @bg0;
+}
+
 #temperature {
     background-color: @fg;
     color: @bg0;
@@ -89,12 +105,10 @@ window#waybar {
 }
 
 #backlight {
-    padding: 0 10px;
-    color: @yellow;
+    color: @fg1;
 }
 
 #battery {
-    padding: 0 10px;
     border-radius: 10px 0px 0px 10px;
 }
 
