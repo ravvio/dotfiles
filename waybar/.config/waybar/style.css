@@ -1,8 +1,4 @@
-@define-color black #282828;
-@define-color white #ccd6eb;
 @define-color yellow #ddca7d;
-@define-color red #d16666;
-@define-color bright-red #C84630;
 @define-color gray #7d8ca3;
 @define-color green #4DA167;
 @define-color dark-green #386150;
@@ -11,11 +7,22 @@
 @define-color pink #9E768F;
 @define-color midnight-green #13505B;
 
-@define-color ash #bfc3ba;
+@define-color fg1 #bfc3ba;
 @define-color silver #a9aca9;
 @define-color eggplant #60495a;
 @define-color violet #3f3244;
 @define-color purple #2f2235;
+
+
+@define-color bg0 #282828;
+
+@define-color fg #BFC3BA;
+@define-color fg0 #D4BE98;
+@define-color fg1 #DDC7A1;
+
+@define-color red #EA6962;
+@define-color red-bright #E4572E;
+
 
 * {
     font-family: Monaspace Argon;
@@ -25,7 +32,7 @@
 
 window#waybar {
     background: rgba(40, 40, 40, 0.5);
-    color: @white;
+    color: @bg0;
     padding-top: 0;
     padding-bottom: 0;
     transition-property: background-color;
@@ -33,7 +40,7 @@ window#waybar {
 }
 
 #clock,
-#tray, 
+#tray,
 #workspaces,
 #pulseaudio,
 #backlight,
@@ -41,7 +48,7 @@ window#waybar {
 #temperature,
 #workspaces,
 #cpu {
-    background-color: @black;
+    background-color: @bg0;
     margin-top: 5px;
     margin-bottom: 5px;
     opacity: 1;
@@ -50,16 +57,13 @@ window#waybar {
 #tray {
     padding: 0px 10px;
     margin-right: 5px;
-    border-radius: 0px 50px 50px 0px;
-    color: @black;
-    border-width: 0 0 0 1px;
-    border-style: solid;
-    border-color: @ash;
+    border-radius: 10px;
+    background-color: @bg0;
 }
 
 #temperature {
-    background-color: @ash;
-    color: @black;
+    background-color: @fg;
+    color: @bg0;
     margin-top: 5px;
     margin-right: 5px;
     border-radius: 50px 50px 50px 50px;
@@ -69,9 +73,9 @@ window#waybar {
 
 
 #clock {
-    color: @yellow;
+    color: @fg0;
     margin-top: 5px;
-    border-radius: 50px 50px 50px 50px;
+    border-radius: 10px;
     padding: 5px 15px;
 }
 
@@ -79,14 +83,19 @@ window#waybar {
     padding: 0 10px;
 }
 
+#pulseaudio.microphone {
+    border-radius: 0 10px 10px 0;
+    margin-right: 10px;
+}
+
 #backlight {
-    padding-right: 10px;
+    padding: 0 10px;
     color: @yellow;
 }
 
 #battery {
-    padding-left: 15px;
-    border-radius: 50px 0px 0px 50px;
+    padding: 0 10px;
+    border-radius: 10px 0px 0px 10px;
 }
 
 #battery.full {
@@ -106,7 +115,7 @@ window#waybar {
 }
 
 #battery.discharging.critical {
-    color: @bright-red;
+    color: @red;
 }
 
 #pulseaudio {
@@ -122,23 +131,23 @@ window#waybar {
 }
 
 #workspaces {
-    padding: 5px 10px;
+    padding: 5px 5px;
     margin-top: 5px;
     margin-left: 5px;
-    border-radius: 50px 50px 50px 50px;
+    border-radius: 10px;
     opacity: 1;
 }
 
 #workspaces button {
     border-radius: 0px;
-    color: @ash;
+    color: @fg;
     margin: 0;
 }
 
 #workspaces button.active {
     font-weight: bold;
-    color: @black;
+    color: @bg0;
     background-color: @red;
-    border-radius: 50px;
+    border-radius: 10px;
 }
 
