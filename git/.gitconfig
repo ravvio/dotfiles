@@ -1,6 +1,7 @@
 [user]
 	email = alessio.raviola.98@gmail.com
 	name = Alessio Raviola
+	signingkey = F40CD76BFBA93D64
 [gpg]
 	program = gpg
 [commit]

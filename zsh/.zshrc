@@ -166,3 +166,9 @@ fi
 # Nice list
 alias ll="ls -alh"
 
+
+## [Completion]
+## Completion scripts setup. Remove the following line to uninstall
+[[ -f /home/alessio/.dart-cli-completion/zsh-config.zsh ]] && . /home/alessio/.dart-cli-completion/zsh-config.zsh || true
+## [/Completion]
+
