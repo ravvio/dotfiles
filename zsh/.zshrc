@@ -172,3 +172,5 @@ alias ll="ls -alh"
 [[ -f /home/alessio/.dart-cli-completion/zsh-config.zsh ]] && . /home/alessio/.dart-cli-completion/zsh-config.zsh || true
 ## [/Completion]
 
+# OPT OUT
+export SAM_CLI_TELEMETRY=0
