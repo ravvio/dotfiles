@@ -7,19 +7,30 @@
     "height": 40,
     "modules-left": [
         "hyprland/workspaces",
-        "wlr/taskbar"
+        "hyprland/window"
     ],
     "modules-center": [
         "clock"
     ],
     "modules-right": [
+        "hyprland/language",
         "battery",
         "cpu",
-        "backlight",
+        "custom/updates",
         "pulseaudio",
         "pulseaudio#microphone",
         "tray"
     ],
+    "custom/updates": {
+        "format": "{icon} {}",
+        "return-type": "json",
+        "format-icons": {
+            "has-updates": "󱍷",
+            "updated": "󰂪"
+        },
+        "exec-if": "which waybar-module-pacman-updates",
+        "exec": "waybar-module-pacman-updates  --interval-seconds 5 --network-interval-seconds 300"
+    },
     "clock": {
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format": "{:%a, %d %b  󱑒  %H:%M}"
@@ -107,5 +118,15 @@
             "9": [],
             "10": []
         }
+    },
+    "hyprland/window": {
+        "format": "{}",
+        "icon": true,
+        "rewrite": {
+            "(.*) — Mozilla Firefox": "$1"
+        }
+    },
+    "taskbar": {
+        "on-click-right": "close"
     }
 }

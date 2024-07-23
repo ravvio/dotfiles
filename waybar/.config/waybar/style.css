@@ -1,29 +1,57 @@
-@define-color yellow #ddca7d;
-@define-color gray #7d8ca3;
-@define-color green #4DA167;
-@define-color dark-green #386150;
-@define-color flame #E4572E;
-@define-color moss #646536;
-@define-color pink #9E768F;
-@define-color midnight-green #13505B;
-
-@define-color fg1 #bfc3ba;
-@define-color silver #a9aca9;
-@define-color eggplant #60495a;
-@define-color violet #3f3244;
-@define-color purple #2f2235;
-
 @define-color BG #32302f;
+@define-color FG #d0d0d0;
+
 @define-color bg0 #282828;
+@define-color bg1 #32302f;
+@define-color bg2 #45403d;
+@define-color bg3 #5a524c;
+@define-color bg4 #504945;
+@define-color bgs #32302f;
+@define-color l-bg0 #fbf1c7;
+@define-color l-bg1 #f4e8be;
+@define-color l-bg2 #f2e5bc;
+@define-color l-bg3 #eee0b7;
+@define-color l-bg4 #e5d5ad;
 
 @define-color fg #BFC3BA;
-@define-color FG #d0d0d0;
 @define-color fg0 #D4BE98;
 @define-color fg1 #DDC7A1;
+@define-color l-fg0 #654735;
+@define-color l-fg1 #4f3829;
 
-@define-color red #EA6962;
-@define-color red-bright #E4572E;
+@define-color grey0 #7c6f64;
+@define-color grey1 #928374;
+@define-color grey2 #a89984;
 
+@define-color green #a9b665;
+@define-color greendark #34381b;
+@define-color green-old #4DA167;
+@define-color dark-green #386150;
+@define-color l-green #6c782e;
+
+@define-color red #ea6962;
+@define-color reddark #402120;
+@define-color red-old #E4572E;
+@define-color l-red #c14a4a;
+
+@define-color yellow #d8a657;
+@define-color yellowdark #4f422e;
+@define-color yellow-old #ddca7d;
+@define-color l-yellow #b47109;
+
+@define-color l-orange #c35e0a;
+
+@define-color blue #7daea3;
+@define-color bluedark #458588;
+@define-color l-blue #45707a;
+
+@define-color magenta #d3869b;
+@define-color magentadark #b14286;
+@define-color l-magenta #945e80;
+
+@define-color acqua #8ec07c;
+@define-color acquadark #689d6a;
+@define-color l-acqua #4c7a5d;
 
 * {
     font-family: Monaspace Argon;
@@ -33,33 +61,59 @@
 
 window#waybar {
     background: rgba(40, 40, 40, 0.5);
-    color: @bg0;
     padding-top: 0;
     padding-bottom: 0;
     transition-property: background-color;
     transition-duration: .5s;
 }
 
+#custom-updates,
 #clock,
 #tray,
 #workspaces,
 #pulseaudio,
 #backlight,
 #battery,
-#temperature,
 #workspaces,
+#taskbar,
+#window,
+#language,
 #cpu {
-    background-color: @bg0;
     margin-top: 5px;
     margin-bottom: 5px;
     opacity: 1;
 }
 
+#clock {
+    background-color: @bg0;
+    color: @fg0;
+    margin-top: 5px;
+    border-radius: 10px;
+    padding: 5px 15px;
+    font-weight: bold;
+}
+
+#window {
+    color: @l-bg3;
+    padding: 0px 2px;
+    border-bottom: 3px solid;
+    border-color: @l-bg3;
+    margin-left: 5px;
+    margin-right: 100px;
+    font-weight: bold;
+}
+
+window#waybar.empty #window {
+    border-bottom: 0px solid;
+    opacity: 0;
+}
+
 #tray {
+    background-color: @bg0;
     padding: 0px 10px;
     margin-right: 5px;
+    margin-left: 5px;
     border-radius: 10px;
-    background-color: @bg0;
 }
 
 #tray menu {
@@ -68,7 +122,7 @@ window#waybar {
 }
 
 #tray menu menuitem {
-    color: @fg;
+    color: @FG;
 }
 
 #tray menu menuitem:hover {
@@ -77,84 +131,73 @@ window#waybar {
     border-color: @bg0;
 }
 
-#temperature {
-    background-color: @fg;
-    color: @bg0;
-    margin-top: 5px;
-    margin-right: 5px;
-    border-radius: 50px 50px 50px 50px;
-    padding-left: 15px;
-    padding-right: 45px;
-}
-
-
-#clock {
-    color: @fg0;
-    margin-top: 5px;
-    border-radius: 10px;
-    padding: 5px 15px;
-}
-
-#battery, #cpu, #backlight, #pulseaudio, #pulseaudio.microphone {
+#battery, #cpu, #backlight, #pulseaudio, #pulseaudio.microphone,
+#custom-updates
+{
+    background-color: @l-bg3;
     padding: 0 10px;
 }
 
-#pulseaudio.microphone {
-    border-radius: 0 10px 10px 0;
-    margin-right: 10px;
-}
-
 #backlight {
-    color: @fg1;
+    color: @l-yellow;
 }
 
 #battery {
     border-radius: 10px 0px 0px 10px;
+    margin-left: 5px;
 }
 
 #battery.full {
-    color: @green;
+    color: @l-green;
 }
 
 #battery.charging {
-    color: @dark-green;
+    color: @l-green;
 }
 
 #battery.discharging.good {
-    color: @dark-green;
+    color: @l-green;
 }
 
 #battery.discharging.warning {
-    color: @yellow;
+    color: @l-orange;
 }
 
 #battery.discharging.critical {
-    color: @red;
+    color: @l-red;
 }
 
+#custom-updates {
+    color: @l-yellow;
+}
+
+
 #pulseaudio {
-    color: @pink;
+    color: @l-blue;
 }
 
 #pulseaudio.microphone {
-    color: @pink;
+    color: @l-blue;
+    border-radius: 0 10px 10px 0;
+    margin-right: 5px;
 }
 
 #cpu {
-    color: @silver;
+    color: @l-fg0;
 }
 
 #workspaces {
+    background-color: @bg0;
     padding: 5px 5px;
-    margin-top: 5px;
     margin-left: 5px;
+    margin-right: 5px;
     border-radius: 10px;
     opacity: 1;
 }
 
 #workspaces button {
     border-radius: 0px;
-    color: @fg;
+    color: @fg0;
     margin: 0;
 }
 
@@ -165,3 +208,28 @@ window#waybar {
     border-radius: 10px;
 }
 
+#language {
+    color: @l-bg3;
+    padding: 0px 2px;
+    border-bottom: 3px solid;
+    border-color: @l-bg3;
+    margin-left: 5px;
+    margin-right: 5px;
+    font-weight: bold;
+}
+
+#taskbar {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#taskbar button {
+    border-radius: 0px;
+    border: 0px;
+    border-bottom: 3px solid;
+    border-color: @grey2;
+}
+
+#taskbar button.active {
+    border-color: @l-bg3;
+}
