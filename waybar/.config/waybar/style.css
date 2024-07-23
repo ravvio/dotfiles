@@ -78,7 +78,8 @@ window#waybar {
 #taskbar,
 #window,
 #language,
-#cpu {
+#cpu,
+#disk {
     margin-top: 5px;
     margin-bottom: 5px;
     opacity: 1;
@@ -131,7 +132,8 @@ window#waybar.empty #window {
     border-color: @bg0;
 }
 
-#battery, #cpu, #backlight, #pulseaudio, #pulseaudio.microphone,
+#battery, #cpu, #disk,
+#backlight, #pulseaudio, #pulseaudio.microphone,
 #custom-updates
 {
     background-color: @l-bg3;
@@ -184,6 +186,10 @@ window#waybar.empty #window {
 
 #cpu {
     color: @l-fg0;
+}
+
+#disk {
+    color: @l-fg1;
 }
 
 #workspaces {

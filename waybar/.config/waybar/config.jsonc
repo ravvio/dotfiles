@@ -16,6 +16,7 @@
         "hyprland/language",
         "battery",
         "cpu",
+        "disk",
         "custom/updates",
         "pulseaudio",
         "pulseaudio#microphone",
@@ -33,7 +34,7 @@
     },
     "clock": {
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format": "{:%a, %d %b  󱑒  %H:%M}"
+        "format": "  {:%a, %d %b    %H:%M}"
     },
     "temperature": {
         "hwmon-path": "",
@@ -62,9 +63,9 @@
         "on-click-right": "pavucontrol",
         "format-muted": "",
         "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
             "phone": "",
             "portable": "",
             "car": "",
@@ -97,6 +98,11 @@
         "format": " {usage}%",
         "max-length": 10,
         "on-click": "kitty --start-as=fullscreen --title btop sh -c 'btop'"
+    },
+    "disk": {
+        "interval": 60,
+        "format": "󰨣 {percentage_used}%",
+        "path": "/home"
     },
     "tray": {
         "icon-size": 16,
