@@ -46,7 +46,7 @@
     "battery": {
         "states": {
             "good": 100,
-            "warning": 40,
+            "warning": 50,
             "critical": 25
         },
         "format": "{icon} {capacity}%",
@@ -101,7 +101,7 @@
     },
     "disk": {
         "interval": 60,
-        "format": "󰨣 {percentage_used}%",
+        "format": " {percentage_used}%",
         "path": "/home"
     },
     "tray": {
@@ -117,16 +117,15 @@
             "5": [],
             "6": [],
             "7": [],
-            "8": [],
-            "9": [],
-            "10": []
+            "8": []
         }
     },
     "hyprland/window": {
         "format": "{}",
         "icon": true,
         "rewrite": {
-            "(.*) — Mozilla Firefox": "$1"
+            "(.*) — Mozilla Firefox": "$1",
+            "tmux": " "
         }
     },
     "taskbar": {

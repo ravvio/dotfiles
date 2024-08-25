@@ -39,6 +39,7 @@
 @define-color yellow-old #ddca7d;
 @define-color l-yellow #b47109;
 
+@define-color orange #e78a4e;
 @define-color l-orange #c35e0a;
 
 @define-color blue #7daea3;
@@ -60,7 +61,7 @@
 }
 
 window#waybar {
-    background: rgba(40, 40, 40, 0.5);
+    background: rgba(40, 40, 40, 0.6);
     padding-top: 0;
     padding-bottom: 0;
     transition-property: background-color;
@@ -137,7 +138,7 @@ window#waybar.empty #window {
 #custom-updates
 {
     background-color: @l-bg3;
-    padding: 0 10px;
+    padding: 0 6px;
 }
 
 #backlight {
@@ -145,15 +146,9 @@ window#waybar.empty #window {
 }
 
 #battery {
+    padding-left: 10px;
     border-radius: 10px 0px 0px 10px;
     margin-left: 5px;
-}
-
-#battery.full {
-    color: @l-green;
-}
-
-#battery.charging {
     color: @l-green;
 }
 
@@ -170,18 +165,27 @@ window#waybar.empty #window {
 }
 
 #custom-updates {
+    padding-right: 10px;
     color: @l-yellow;
+    margin-right: 5px;
+    border-radius: 0 10px 10px 0;
 }
 
 
 #pulseaudio {
-    color: @l-blue;
+    padding-left: 10px;
+    background-color: @yellow;
+    color: @bg1;
+    margin-left: 5px;
+    border-radius: 10px 0px 0px 10px;
 }
 
 #pulseaudio.microphone {
-    color: @l-blue;
+    padding-right: 10px;
+    background-color: @yellow;
     border-radius: 0 10px 10px 0;
     margin-right: 5px;
+    margin-left: 0px;
 }
 
 #cpu {
@@ -189,7 +193,7 @@ window#waybar.empty #window {
 }
 
 #disk {
-    color: @l-fg1;
+    color: @l-fg0;
 }
 
 #workspaces {
@@ -212,6 +216,18 @@ window#waybar.empty #window {
     color: @bg0;
     background-color: @red;
     border-radius: 10px;
+}
+
+window#waybar.kitty #workspaces button.active {
+    background-color: @fg0;
+}
+
+window#waybar.firefox #workspaces button.active {
+    background-color: @orange;
+}
+
+window#waybar.WebCord #workspaces button.active {
+    background-color: @blue;
 }
 
 #language {
@@ -239,3 +255,4 @@ window#waybar.empty #window {
 #taskbar button.active {
     border-color: @l-bg3;
 }
+

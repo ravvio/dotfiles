@@ -1,0 +1,55 @@
+@define-color BG #32302f;
+@define-color FG #d0d0d0;
+
+@define-color bg0 #282828;
+@define-color bg1 #32302f;
+@define-color bg2 #45403d;
+@define-color bg3 #5a524c;
+@define-color bg4 #504945;
+@define-color bgs #32302f;
+@define-color l-bg0 #fbf1c7;
+@define-color l-bg1 #f4e8be;
+@define-color l-bg2 #f2e5bc;
+@define-color l-bg3 #eee0b7;
+@define-color l-bg4 #e5d5ad;
+
+@define-color fg #BFC3BA;
+@define-color fg0 #D4BE98;
+@define-color fg1 #DDC7A1;
+@define-color l-fg0 #654735;
+@define-color l-fg1 #4f3829;
+
+@define-color grey0 #7c6f64;
+@define-color grey1 #928374;
+@define-color grey2 #a89984;
+
+@define-color green #a9b665;
+@define-color greendark #34381b;
+@define-color green-old #4DA167;
+@define-color dark-green #386150;
+@define-color l-green #6c782e;
+
+@define-color red #ea6962;
+@define-color reddark #402120;
+@define-color red-old #E4572E;
+@define-color l-red #c14a4a;
+
+@define-color yellow #d8a657;
+@define-color yellowdark #4f422e;
+@define-color yellow-old #ddca7d;
+@define-color l-yellow #b47109;
+
+@define-color orange #e78a4e;
+@define-color l-orange #c35e0a;
+
+@define-color blue #7daea3;
+@define-color bluedark #458588;
+@define-color l-blue #45707a;
+
+@define-color magenta #d3869b;
+@define-color magentadark #b14286;
+@define-color l-magenta #945e80;
+
+@define-color acqua #8ec07c;
+@define-color acquadark #689d6a;
+@define-color l-acqua #4c7a5d;
