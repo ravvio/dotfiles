@@ -146,8 +146,11 @@ export PATH="$PATH:$HOME/.rvm/bin"
 [[ -s "$HOME/.pub-cache/bin" ]] && export PATH="$HOME/.pub-cache/bin:$PATH"
 
 # GO
-export GOPATH="$(go env GOPATH)"
-export PATH="$GOPATH/bin:$PATH"
+if command -v go &> /dev/null
+then
+    export GOPATH="$(go env GOPATH)"
+    export PATH="$GOPATH/bin:$PATH"
+fi
 
 ### Path for my stuff
 
