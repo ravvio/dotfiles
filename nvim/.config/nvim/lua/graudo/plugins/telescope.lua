@@ -21,24 +21,7 @@ return {
         'famiu/bufdelete.nvim'
     },
     config = function()
-
-        local action_state = require("telescope.actions.state")
-        local actions = {}
-        actions.delete_buf = function(prompt_bufnr)
-            local current_picker = action_state.get_current_picker(prompt_bufnr)
-            current_picker:delete_selection(function(selection)
-                local force = vim.api.nvim_buf_get_option(selection.bufnr, "buftype") == "termina"
-                local ok = pcall(require('bufdelete').bufdelete, selection.bufnr, { force = force })
-                return ok
-            end)
-        end
-
-        local transform_mod = require("telescope.actions.mt").transform_mod
-        actions = transform_mod(actions)
-
         require("telescope").setup {
-            mappings = {
-            },
             pickers = {
                 help_tags = {
                     theme = "dropdown"
@@ -49,11 +32,6 @@ return {
                 lsp_references = {
                     theme = "ivy"
                 },
-                buffers = {
-                    mappings = {
-                        ["C-d"] = actions.delete_buf
-                    }
-                }
             },
             extensions = {
                 ['ui-select'] = {
@@ -76,14 +54,18 @@ return {
         vim.keymap.set("n", "<leader>fs", builtin.find_files, { desc = "[F]ile [S]earch" })
         vim.keymap.set("n", "<leader>f.", builtin.oldfiles, { desc = '[F]ile recent files ("." for repeat)' })
         vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "[F]ind [B]uffer" })
+        vim.keymap.set("n", "<leader>fm", builtin.marks, { desc = "[F]ind [T]his selected" })
 
         vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "[F]ind by [G]rep" })
         vim.keymap.set("n", "<leader>fw", builtin.grep_string, { desc = "[F]ind [W]ord" })
-        vim.keymap.set("n", "<leader>ft", builtin.builtin, { desc = "[F]ind [T]his selected" })
 
         vim.keymap.set("n", "<leader>fd", builtin.diagnostics, { desc = "[F]ind [D]iagnostics" })
         vim.keymap.set("n", "<leader>fi", builtin.lsp_implementations, { desc = "[F]ind [I]implementations" })
         vim.keymap.set("n", "<leader>fr", builtin.lsp_references, { desc = "[F]ind [R]eferences" })
+
+        vim.keymap.set("n", "<leader>gd", function()
+                builtin.lsp_definitions({ jump_type="vsplit" })
+            end, { desc = "[G]o to [D]efinition in split" })
 
         vim.keymap.set("n", "<leader>fc", builtin.git_commits, { desc = "[F]ind [C]commits" })
 

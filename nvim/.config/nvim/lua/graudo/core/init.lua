@@ -6,5 +6,3 @@ require("graudo.core.remap")
 require("graudo.core.set")
 require("graudo.core.filetype")
 require("graudo.core.autocmd")
-
-require("graudo.core.git")

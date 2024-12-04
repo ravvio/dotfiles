@@ -1,4 +1,5 @@
 require("graudo.core")
+require("graudo.extra")
 require("graudo.lazy")
 require("graudo.colorscheme")
 

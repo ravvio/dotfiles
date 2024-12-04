@@ -82,18 +82,15 @@ window#waybar {
 #language,
 #cpu,
 #disk {
-    margin-top: 5px;
-    margin-bottom: 5px;
     opacity: 1;
 }
 
 #clock {
     background-color: @bg0;
     color: @fg0;
-    margin-top: 5px;
-    border-radius: 10px;
-    padding: 5px 15px;
+    padding: 5px 5px 5px 10px;
     font-weight: bold;
+    border-left: 5px solid @bgs;
 }
 
 #window {
@@ -101,7 +98,6 @@ window#waybar {
     padding: 0px 2px;
     border-bottom: 3px solid;
     border-color: @l-bg3;
-    margin-left: 5px;
     margin-right: 100px;
     font-weight: bold;
 }
@@ -114,7 +110,8 @@ window#waybar.empty #window {
 #tray {
     background-color: @bg0;
     padding: 0px 10px;
-    border-radius: 10px 0 0 10px;
+    /* border-radius: 10px 0 0 0px; */
+    border-left: 4px solid @bgs;
 }
 
 #tray menu {
@@ -134,12 +131,9 @@ window#waybar.empty #window {
 
 #custom-notification {
     background-color: @bg0;
-    color: @FG;
-    font-size: 16px;
-    padding-left: 2px;
-    padding-right: 10px;
-    margin-right: 5px;
-    border-radius: 0 10px 10px 0;
+    color: @fg0;
+    font-size: 14px;
+    padding: 5px 15px 5px 10px;
     font-weight: bold;
 }
 
@@ -147,7 +141,8 @@ window#waybar.empty #window {
 #backlight, #pulseaudio, #pulseaudio.microphone,
 #custom-updates
 {
-    background-color: @l-bg3;
+    background-color: @bg0;
+    color: @fg0;
     padding: 0 6px;
 }
 
@@ -157,21 +152,20 @@ window#waybar.empty #window {
 
 #battery {
     padding-left: 10px;
-    border-radius: 10px 0px 0px 10px;
-    margin-left: 5px;
-    color: @l-green;
+    border-radius: 10px 0px 0px 0px;
+    color: @green;
 }
 
 #battery.discharging.good {
-    color: @l-green;
+    color: @green;
 }
 
 #battery.discharging.warning {
-    color: @l-orange;
+    color: @orange;
 }
 
 #battery.discharging.critical {
-    color: @l-red;
+    color: @red;
 }
 
 #custom-updates {
@@ -183,37 +177,36 @@ window#waybar.empty #window {
 
 
 #pulseaudio {
-    padding-left: 10px;
-    background-color: @yellow;
-    color: @bg1;
-    border-radius: 10px 0px 0px 10px;
+    color: @magenta;
+    padding-right: 10px;
+    /* border-radius: 10px 0px 0px 0px; */
+    /* border-left: 4px solid @bgs; */
 }
 
 #pulseaudio.microphone {
+    color: @magenta;
+    border: 0px;
     padding-right: 10px;
-    background-color: @yellow;
-    border-radius: 0 10px 10px 0;
-    margin-right: 5px;
+    /* border-radius: 0 10px 0px 0; */
+    /* margin-right: 5px; */
     margin-left: 0px;
 }
 
 #cpu {
-    color: @l-fg0;
+    color: @yellow;
 }
 
 #disk {
-    border-radius: 0 10px 10px 0;
-    margin-right: 5px;
-    color: @l-fg0;
+    /* border-radius: 0 10px 0px 0; */
+    /* margin-right: 5px; */
+    color: @blue;
 }
 
 #workspaces {
     background-color: @bg0;
-    padding: 5px 5px;
-    margin-left: 5px;
-    margin-right: 5px;
-    border-radius: 10px;
+    padding: 5px 5px 5px 5px;
     opacity: 1;
+    border-radius: 0px 10px 0px 0px;
 }
 
 #workspaces button {
@@ -243,11 +236,10 @@ window#waybar.WebCord #workspaces button.active {
 
 #language {
     color: @l-bg3;
-    padding: 0px 2px;
+    padding: 0px 4px 0px 2px;
     border-bottom: 3px solid;
     border-color: @l-bg3;
     margin-left: 5px;
-    margin-right: 5px;
     font-weight: bold;
 }
 

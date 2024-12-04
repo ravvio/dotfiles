@@ -7,7 +7,8 @@ return {
             render = "wrapped-compact",
             timeout = 3000,
             minumum_width = 30,
+            top_down = false,
         })
         vim.notify = noti
-    end
+    end,
 }

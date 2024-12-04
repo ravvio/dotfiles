@@ -1,16 +1,15 @@
 {
     "layer": "top",
-    "position": "top",
+    "position": "bottom",
     "mod": "dock",
     "exclusive": true,
     "passthrough": false,
-    "height": 44,
+    "height": 35,
     "modules-left": [
         "hyprland/workspaces",
         "hyprland/window"
     ],
     "modules-center": [
-        "clock"
     ],
     "modules-right": [
         "hyprland/language",
@@ -18,8 +17,8 @@
         "cpu",
         "disk",
         "pulseaudio",
-        "pulseaudio#microphone",
         "tray",
+        "clock",
         "custom/notification"
     ],
     "custom/notification": {
@@ -55,7 +54,8 @@
     "clock": {
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "timezone": "Europe/Rome",
-        "format": "  {:%a, %d %b    %H:%M}"
+        "format": "  {:%a, %d %b    %H:%M}",
+        "on-click": "swaync-client -t -sw"
     },
     "temperature": {
         "hwmon-path": "",
@@ -148,7 +148,7 @@
         "path": "/home"
     },
     "tray": {
-        "icon-size": 16,
+        "icon-size": 14,
         "spacing": 14
     },
     "hyprland/workspaces": {

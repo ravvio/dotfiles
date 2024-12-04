@@ -10,7 +10,8 @@ return {
         "gopls",
         "astro",
         "dockerls",
-        "docker_compose_language_service"
+        "docker_compose_language_service",
+        "zls", -- zig
     },
     auto_update = false,
     run_on_start = true,

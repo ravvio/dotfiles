@@ -3,6 +3,7 @@ return {
     dependencies = {
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
+        "nvim-telescope/telescope.nvim",
         { 'j-hui/fidget.nvim', opts = {} },
     },
     config = function()

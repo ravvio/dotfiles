@@ -39,12 +39,12 @@ return {
                     enable = true,
 
                     swap_next = {
-                        ["<leader>wna"] = { query = "@parameter.inner" },
-                        ["<leader>wnf"] = { query = "@function.outer"  },
+                        ["<leader>wna"] = "@parameter.inner",
+                        ["<leader>wnf"] = "@function.outer",
                     },
                     swap_previous = {
-                        ["<leader>wpa"] = { query = "@parameter.inner" },
-                        ["<leader>wpf"] = { query = "@function.outer"  },
+                        ["<leader>wpa"] = "@parameter.inner",
+                        ["<leader>wpf"] = "@function.outer",
                     },
                 },
 
