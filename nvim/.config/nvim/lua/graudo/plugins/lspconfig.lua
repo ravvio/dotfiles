@@ -37,9 +37,25 @@ return {
                 map('<leader>D', vim.lsp.buf.type_definition, "Go to [^D]efinition")
 
                 map('<leader>rn', vim.lsp.buf.rename, "[R]e[N]ame")
-                map('<leader>fo', function() vim.lsp.buf.format { async = true } end, "[F][O]rmat")
-                vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action,
-                    { buffer = ev.buffer, desc = "[C]ode [A]ctions" })
+
+                vim.keymap.set(
+                    { 'n', 'v' },
+                    '<leader>ca',
+                    vim.lsp.buf.code_action,
+                    { buffer = ev.buffer, desc = "[C]ode [A]ctions" }
+                )
+
+                map(
+                    '<leader>fo',
+                    function()
+                        local client = vim.lsp.get_client_by_id(ev.data.client_id)
+                        if not client then return end
+                        if not client.supports_method('textDocument/formatting') then return end
+
+                        vim.lsp.buf.format({ async = false })
+                    end,
+                    "[F][O]rmat"
+                )
 
                 -- The following two autocommands are used to highlight references of the
                 -- word under your cursor when your cursor rests there for a little while.
@@ -47,7 +63,7 @@ return {
                 --
                 -- When you move your cursor, the highlights will be cleared (the second autocommand).
                 local client = vim.lsp.get_client_by_id(ev.data.client_id)
-                if client and client.server_capabilities.documentHighlightProvider then
+                if client and client.supports_method('textDocument/documentHighlight') then
                     vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
                         buffer = ev.buf,
                         callback = vim.lsp.buf.document_highlight,
