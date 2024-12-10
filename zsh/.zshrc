@@ -129,9 +129,6 @@ fi
 
 ### Misc Aliases
 
-# FVM alias
-alias flutter="fvm flutter"
-
 # Eza
 if command -v eza &> /dev/null
 then
