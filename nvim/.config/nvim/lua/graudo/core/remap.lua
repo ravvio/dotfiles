@@ -34,10 +34,8 @@ vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "<C-f>", "<Cmd>silent !tmux neww tmux-sessionizer<CR>")
 
 -- Quickfix navigation
-vim.keymap.set("n", "<leader>k>", "<Cmd>cnext<CR>zz")
-vim.keymap.set("n", "<leader>j", "<Cmd>cprev<CR>zz")
-vim.keymap.set("n", "<leader>l", "<Cmd>lnext<CR>zz")
-vim.keymap.set("n", "<leader>h", "<Cmd>lprev<CR>zz")
+vim.keymap.set("n", "<C-q><C-n>", "<Cmd>cnext<CR>zz")
+vim.keymap.set("n", "<C-q><C-p>", "<Cmd>cprev<CR>zz")
 
 -- Navigate splits
 -- vim.keymap.set("n", "<C-h>", "<C-w>h")

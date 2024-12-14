@@ -10,7 +10,7 @@ return {
             { desc = "Open parent directory" }
         )
         vim.keymap.set(
-            "n", "<CR>-", require("oil").toggle_float,
+            "n", "<leader>-", require("oil").toggle_float,
             { desc = "Open parent directory in floating window" }
         )
 
