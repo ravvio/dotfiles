@@ -16,6 +16,7 @@ return {
         scroll = { enabled = true },
         statuscolumn = { enabled = true },
         words = { enabled = true },
+        git = { enabled = true },
     },
     keys = {
         { "<leader>nh",  function() Snacks.notifier.show_history() end, desc = "[N]otification [H]istory" },
