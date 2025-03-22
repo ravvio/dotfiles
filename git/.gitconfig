@@ -9,6 +9,7 @@
 	gpgsign = true
 [tag]
 	forcesignannotated = false
+	gpgsign = true
 [init]
 	defaultbranch = main
 [core]
@@ -44,3 +45,5 @@
 
 [includeIf "gitdir:~/codeploy/"]
     path = ~/codeploy/.gitconfig
+[gpg "ssh"]
+	allowedSignersFile = /home/alessio/dotfiles/git/allowed_signers
