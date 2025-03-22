@@ -1,11 +1,12 @@
 [user]
-	email = alessio.raviola@codeploy.it
+	email = alessio.raviola.98@gmail.it
 	name = Alessio Raviola
-	signingkey = F40CD76BFBA93D64
+	signingkey = /home/alessio/.ssh/gitpersonal.pub
 [gpg]
 	program = gpg
+	format = ssh
 [commit]
-	gpgsign = false
+	gpgsign = true
 [tag]
 	forcesignannotated = false
 [init]
@@ -26,6 +27,7 @@
     ss = status
     ci = commit
     br = branch
+    wi = switch
 
     difft = difftool
     merget = mergetool
@@ -39,13 +41,6 @@
 [maintenance]
     auto = false
     strategy = incremental
-
-[credential "https://github.com"]
-	helper = 
-	helper = !/usr/bin/gh auth git-credential
-[credential "https://gist.github.com"]
-	helper = 
-	helper = !/usr/bin/gh auth git-credential
 
 [includeIf "gitdir:~/codeploy/"]
     path = ~/codeploy/.gitconfig

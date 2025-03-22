@@ -128,6 +128,8 @@ fi
 
 ### Misc Aliases
 
+alias vibes="git status -s -b"
+
 # Eza
 if command -v eza &> /dev/null
 then
@@ -154,3 +156,6 @@ export SAM_CLI_TELEMETRY=0
 # Default editor
 export EDITOR="nvim"
 export VISUAL="nvim"
+
+# Container
+# export COMPOSE_BAKE=true
