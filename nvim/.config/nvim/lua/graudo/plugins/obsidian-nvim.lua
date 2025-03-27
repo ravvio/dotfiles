@@ -3,8 +3,8 @@ return {
   version = "*",  -- recommended, use latest release instead of latest commit
   lazy = true,
   event = {
-    "BufReadPre " .. vim.fn.expand "~" .. "/vaults/**.md",
-    "BufNewFile " .. vim.fn.expand "~" .. "/vaults/**.md",
+    "BufReadPre " .. vim.fn.expand "~" .. "/vault/**.md",
+    "BufNewFile " .. vim.fn.expand "~" .. "/vault/**.md",
   },
   dependencies = {
     "nvim-lua/plenary.nvim",
@@ -13,12 +13,8 @@ return {
     workspaces = {
       {
         name = "personal",
-        path = "~/vaults/personal",
-      },
-      {
-        name = "work",
-        path = "~/vaults/work",
-      },
+        path = "~/vault",
+      }
     },
 
     notes_subdir = "notes",
@@ -46,7 +42,7 @@ return {
         opts = { noremap = false, expr = true, buffer = true },
       },
       -- Toggle check-boxes.
-      ["<leader>ch"] = {
+      ["<leader>oh"] = {
         action = function()
           return require("obsidian").util.toggle_checkbox()
         end,
@@ -58,7 +54,16 @@ return {
           return require("obsidian").util.smart_action()
         end,
         opts = { buffer = true, expr = true },
-      }
+      },
+      -- Open notes search
+      ["<leader>fn"] = {
+        action = "<cmd>ObsidianSearch<CR>",
+        opts = { buffer = true, desc = "[F]ind [N]ote" }
+      },
+    },
+
+    ui = {
+      enable = false,
     },
 
     -- Where to put new notes. Valid options are

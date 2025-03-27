@@ -111,7 +111,7 @@ then
 fi
 
 # bun copletions
-[ -s "/home/alessio/.bun/_bun" ] && source "/home/alessio/.bun/_bun"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 # Thefuck
 if command -v fuck &> /dev/null
@@ -128,6 +128,9 @@ then
     export GOPATH="$(go env GOPATH)"
     export PATH="$GOPATH/bin:$PATH"
 fi
+
+# tools
+export PATH="$HOME/tools/zig:$PATH"
 
 ### Misc Aliases
 
