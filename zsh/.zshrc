@@ -31,6 +31,9 @@ zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-syntax-highlighting
 # Fuzzy find tab
 zinit light Aloxaf/fzf-tab
+# History search with fzf
+zinit ice lucid wait'0'
+zinit light joshskidmore/zsh-fzf-history-search
 
 # Enable powerlevel10k
 zinit ice depth=1; zinit light romkatv/powerlevel10k
