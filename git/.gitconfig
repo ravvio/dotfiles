@@ -1,43 +1,63 @@
 [user]
-	email = alessio.raviola.98@gmail.com
-	name = Alessio Raviola
-	signingkey = ~/.ssh/gitpersonal.pub
+    name = Alessio Raviola
+[includeIf "gitdir:~/personal/"]
+    path = .gitconfig.personal
+[includeIf "gitdir:~/dotfiles/"]
+    path = .gitconfig.personal
+[includeIf "gitdir:~/projects/"]
+    path = .gitconfig.personal
+[includeIf "gitdir:~/tools/"]
+    path = .gitconfig.personal
+[includeIf "gitdir:~/codeploy/"]
+    path = .gitconfig.codeploy
 [gpg]
-	program = gpg
-	format = ssh
+    program = gpg
+    format = ssh
 [commit]
-	gpgsign = true
+    gpgsign = true
 [tag]
-	forcesignannotated = false
-	gpgsign = true
+    forcesignannotated = false
+    gpgsign = true
 [init]
-	defaultbranch = main
+    defaultbranch = main
 [core]
-	editor = nvim
+    editor = nvim
+    excludesfile = ~/dotfiles/git/.gitignore
 [diff]
     tool = nvimdiff
 [merge]
     tool = nvimdiff
+    conflictstyle = diff3
+[rerere]
+    enabled = true
 [pull]
-    rebase = false
+    rebase = true
 [column]
-	ui = auto
+    ui = auto
 [branch]
     sort = -committerdate
+[grep]
+    lineNumber = true
+    patternType = perl
 [alias]
     ss = status
     ci = commit
     br = branch
     wi = switch
 
+    amend = commit --amend
+
+    diffw = diff --word-diff
     difft = difftool
     merget = mergetool
 
-	unstage = reset head --
+    unstage = reset head --
     last = log -1 head
     logh = log --oneline --decorate --graph --all
 
-    blameig = blame -wccc
+    rld = reflog --date=iso
+
+    blamec = blame -wccc
 
 [maintenance]
     auto = false
@@ -46,4 +66,4 @@
 [includeIf "gitdir:~/codeploy/"]
     path = ~/codeploy/.gitconfig
 [gpg "ssh"]
-	allowedSignersFile = /home/alessio/dotfiles/git/allowed_signers
+    allowedSignersFile = /home/alessio/dotfiles/git/allowed_signers

@@ -1,0 +1,3 @@
+[user]
+    email = alessio.raviola.98@gmail.com
+    signingkey = ~/.ssh/gitpersonal.pub
