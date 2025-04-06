@@ -8,14 +8,14 @@ return {
         -- or leave it empty to use the default settings
         -- refer to the configuration section below
         bigfile = { enabled = true },
-        dashboard = { enabled = true },
+        dashboard = { enabled = false },
         indent = { enabled = true },
-        input = { enabled = true },
+        input = { enabled = false },
         notifier = { enabled = true },
         quickfile = { enabled = true },
         scroll = { enabled = false },
         statuscolumn = { enabled = true },
-        words = { enabled = true },
+        words = { enabled = false },
         git = { enabled = true },
     },
     keys = {

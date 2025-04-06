@@ -3,6 +3,8 @@ return {
   version = "*",  -- recommended, use latest release instead of latest commit
   lazy = true,
   event = {
+    "BufReadPre " .. vim.fn.expand "~" .. "/vaults/**.md",
+    "BufNewFile " .. vim.fn.expand "~" .. "/vaults/**.md",
     "BufReadPre " .. vim.fn.expand "~" .. "/vault/**.md",
     "BufNewFile " .. vim.fn.expand "~" .. "/vault/**.md",
   },
@@ -13,8 +15,16 @@ return {
     workspaces = {
       {
         name = "personal",
+        path = "~/vaults/personal",
+      },
+      {
+        name = "work",
+        path = "~/vaults/work",
+      },
+      {
+        name = "vault",
         path = "~/vault",
-      }
+      },
     },
 
     notes_subdir = "notes",

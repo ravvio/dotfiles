@@ -164,4 +164,4 @@ export EDITOR="nvim"
 export VISUAL="nvim"
 
 # Container
-# export COMPOSE_BAKE=true
+export COMPOSE_BAKE=true
