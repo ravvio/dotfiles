@@ -2,6 +2,8 @@
     name = Alessio Raviola
 [includeIf "gitdir:~/personal/"]
     path = .gitconfig.personal
+[includeIf "gitdir:~/vault/"]
+    path = .gitconfig.personal
 [includeIf "gitdir:~/dotfiles/"]
     path = .gitconfig.personal
 [includeIf "gitdir:~/projects/"]
