@@ -17,5 +17,5 @@ handle_choice() {
     esac
 }
 
-choice=$(printf '%s\n' "${options[@]}" | rofi -dmenu)
+choice=$(printf '%s\n' "${options[@]}" | rofi -i -dmenu)
 notify-send "$choice" "$(handle_choice $choice)"
