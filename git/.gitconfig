@@ -1,5 +1,7 @@
 [user]
     name = Alessio Raviola
+    email = alessio.raviola.98@gmail.com
+    signingkey = ~/.ssh/gitpersonal.pub
 [includeIf "gitdir:~/personal/"]
     path = .gitconfig.personal
 [includeIf "gitdir:~/dotfiles/"]
@@ -8,6 +10,8 @@
     path = .gitconfig.personal
 [includeIf "gitdir:~/tools/"]
     path = .gitconfig.personal
+[includeIf "gitdir:~/vault/"]
+    path = .gitconfig.codeploy
 [includeIf "gitdir:~/codeploy/"]
     path = .gitconfig.codeploy
 [gpg]
