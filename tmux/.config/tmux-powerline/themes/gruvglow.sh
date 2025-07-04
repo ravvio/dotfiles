@@ -129,7 +129,7 @@ if [ -z $TMUX_POWERLINE_LEFT_STATUS_SEGMENTS ]; then
 	TMUX_POWERLINE_LEFT_STATUS_SEGMENTS=(
 		"tmux_session_info $fg1 $bg0" \
 		"hostname $bg2 $fg0" \
-		"pwd $bg3 $fg1" \
+		# "pwd $bg3 $fg1" \
 		#"ifstat 30 255" \
 		#"ifstat_sys 30 255" \
 		# "lan_ip 24 255 ${TMUX_POWERLINE_SEPARATOR_RIGHT_THIN}" \
@@ -149,7 +149,7 @@ if [ -z $TMUX_POWERLINE_RIGHT_STATUS_SEGMENTS ]; then
 		#"mailcount 9 255" \
 		#"now_playing $bg1 $grey2" \
 	    # "cpu 240 136" \
-		"load $bg3 $fg1" \
+		# "load $bg3 $fg1" \
 		#"tmux_mem_cpu_load 234 136" \
 		"battery $bg2 $fg0" \
 		# "weather 37 255" \

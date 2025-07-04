@@ -5,6 +5,7 @@ options=(
     "ReloadWaybar"
     "StartDocker"
     "StopDocker"
+    "SystemMaintenance"
 )
 
 handle_choice() {
@@ -13,6 +14,7 @@ handle_choice() {
         'ReloadPipewire') reload-pipewire.sh ;;
         'StartDocker') docker.sh start ;;
         'StopDocker') docker.sh stop ;;
+        'SystemMaintenance') system_maintenance.sh ;;
         *) echo "Error: unrecognized option" ;;
     esac
 }
