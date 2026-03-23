@@ -51,7 +51,11 @@ return {
         vim.keymap.set("n", "<leader>ff", function()
             builtin.git_files({ show_untracked = true })
         end, { desc = "[F]ind Git [F]iles" })
-        vim.keymap.set("n", "<leader>fs", builtin.find_files, { desc = "[F]ile [S]earch" })
+        vim.keymap.set("n", "<leader>fs", function()
+            builtin.find_files({ hidden = true })
+        end,
+            { desc = "[F]ile [S]earch" }
+        )
         vim.keymap.set("n", "<leader>f.", builtin.oldfiles, { desc = '[F]ile recent files ("." for repeat)' })
         vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "[F]ind [B]uffer" })
         vim.keymap.set("n", "<leader>fm", builtin.marks, { desc = "[F]ind [T]his selected" })

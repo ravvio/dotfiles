@@ -28,7 +28,10 @@ addToPath "$HOME/dev/flutter/bin"
 addToPath "$HOME/.pub-cache/bin"
 
 # Ruby
-addToPath "$PATH:$HOME/.rvm/bin"
+addToPathFront "/opt/homebrew/opt/ruby/bin"
+# Gems
+export GEM_HOME=$HOME/.gem
+addToPathFront $GEM_HOME/bin:$PATH
 
 # Bun
 addToPath "$HOME/.bun/bin"
@@ -46,6 +49,13 @@ addToPathFront "$PYENV_ROOT/bin:$PATH"
 export DOTNET_ROOT="${HOME}/.dotnet"
 addToPathFront "${DOTNET_ROOT}"
 addToPathFront "${DOTNET_ROOT}/tools"
+
+# Goenv
+# if [[ -s "$HOME/.goenv" ]]; then
+#     export GOENV_ROOT="$HOME/.goenv"
+#     addToPathFront "${GOENV_ROOT}/bin"
+#     eval $(goenv init -)
+# fi
 
 
 # Added by OrbStack: command-line tools and integration
