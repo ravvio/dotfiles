@@ -21,6 +21,10 @@ libs="$HOME/libs"
 addToPath "$libs/zig"
 addToPath "$libs/zls/zig-out/bin"
 
+# Homebrew
+export CPATH=/opt/homebrew/include
+export LIBRARY_PATH=/opt/homebrew/lib
+
 # Android
 addToPath "$HOME/Library/Android/sdk/platform-tools"
 # Flutter
