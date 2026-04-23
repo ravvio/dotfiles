@@ -50,3 +50,6 @@ vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 vim.opt.colorcolumn = "80"
+
+-- Enable rounded borders in floating windows
+vim.o.winborder = 'rounded'

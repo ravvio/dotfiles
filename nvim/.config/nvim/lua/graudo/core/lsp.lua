@@ -1,15 +1,11 @@
-require("graudo.core")
-require("graudo.lazy")
-require("graudo.extra")
-require("graudo.colorscheme")
-
--- lsp
+-- Enable LSP servers
 vim.lsp.enable({
     'clangd',
     'gopls',
     'lua-language-server',
 })
 
+-- Set up autocommand to enable features based on client capabilities
 vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(ev)
     local client = vim.lsp.get_client_by_id(ev.data.client_id)
@@ -19,5 +15,5 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
--- local vimrc = vim.fn.stdpath("config") .. "/vimrc.vim"
-vim.cmd.source(vimrc)
+-- Add noselect to completeopt otherwise autocompletion is annoying
+vim.cmd("set completeopt+=noselect")

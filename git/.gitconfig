@@ -12,10 +12,8 @@
     path = .gitconfig.personal
 [includeIf "gitdir:~/tools/"]
     path = .gitconfig.personal
-[includeIf "gitdir:~/vault/"]
-    path = .gitconfig.codeploy
-[includeIf "gitdir:~/codeploy/"]
-    path = .gitconfig.codeploy
+[includeIf "gitdir:~/work/"]
+    path = .gitconfig.work
 [gpg]
     program = gpg
     format = ssh
