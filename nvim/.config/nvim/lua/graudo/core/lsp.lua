@@ -2,8 +2,10 @@
 vim.lsp.enable({
     'clangd',
     'gopls',
-    'lua-language-server',
+    'lua-ls',
     'vtsls',
+    'astro-ls',
+    'svelte'
 })
 
 -- Set up global keymaps
