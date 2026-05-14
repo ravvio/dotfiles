@@ -70,7 +70,6 @@ return {
   root_markers = { 'package.json', 'tsconfig.json', 'jsconfig.json', '.git' },
   init_options = {
     typescript = {
-      tsdk = {},
     }
   },
   before_init = function(_, config)
