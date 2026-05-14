@@ -10,8 +10,8 @@ vim.lsp.enable({
 
 -- Set up global keymaps
 vim.keymap.set('n', '<leader>[', vim.diagnostic.open_float, { desc = "] Open diagnositc" })
-vim.keymap.set('n', '[d', function() vim.diagnostic.jump({count = 1, on_jump = vim.diagnostic.open_float }) end, { desc = "Prev [<- [D]iagnostic" })
-vim.keymap.set('n', ']d', function() vim.diagnostic.jump({count = -1, on_jump = vim.diagnostic.open_float }) end, { desc = "Next ->] [D]iagnostic" })
+vim.keymap.set('n', ']d', function() vim.diagnostic.jump({count = 1, on_jump = vim.diagnostic.open_float }) end, { desc = "Prev [<- [D]iagnostic" })
+vim.keymap.set('n', '[d', function() vim.diagnostic.jump({count = -1, on_jump = vim.diagnostic.open_float }) end, { desc = "Next ->] [D]iagnostic" })
 vim.keymap.set('n', '<leader>]', vim.diagnostic.setloclist, { desc = "" })
 
 vim.api.nvim_create_autocmd('LspAttach', {
