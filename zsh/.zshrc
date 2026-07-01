@@ -173,3 +173,18 @@ export VISUAL="nvim"
 export COMPOSE_BAKE=true
 
 # [[ -s "/Users/alessioraviola/.gvm/scripts/gvm" ]] && source "/Users/alessioraviola/.gvm/scripts/gvm"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# >>> juliaup initialize >>>
+
+# !! Contents within this block are managed by juliaup !!
+
+path=('/Users/alessioraviola/.juliaup/bin' $path)
+export PATH
+# Tab completion for juliaup and julia channel selection
+[ -f "/Users/alessioraviola/.julia/juliaup/completions/zsh.zsh" ] && source "/Users/alessioraviola/.julia/juliaup/completions/zsh.zsh"
+
+# <<< juliaup initialize <<<
