@@ -5,21 +5,9 @@ return {
         "nvim-treesitter/nvim-treesitter-textobjects",
     },
     config = function()
-
-        local treesitter_parser_config = require "nvim-treesitter.parsers".get_parser_configs()
-        treesitter_parser_config.templ = {
-            install_info = {
-                url = "https://github.com/vrischmann/tree-sitter-templ.git",
-                files = {"src/parser.c", "src/scanner.c"},
-                branch = "master",
-            },
-        }
-
-        vim.treesitter.language.register('templ', 'templ')
         vim.treesitter.language.register('markdown', 'mdx')
 
-        local config = require("nvim-treesitter.configs")
-        config.setup({
+        require("nvim-treesitter").setup({
             ensure_installed = {
                 "lua", "c", "rust", "norg", "javascript",
                 "typescript", "html", "css", "python",
@@ -41,9 +29,6 @@ return {
                     end
                 end,
             }
-
         })
-
-
     end,
 }

@@ -1,7 +1,6 @@
 [user]
     name = Alessio Raviola
     email = alessio.raviola.98@gmail.com
-    signingkey = ~/.ssh/gitpersonal.pub
 [includeIf "gitdir:~/personal/"]
     path = .gitconfig.personal
 [includeIf "gitdir:~/vault/"]

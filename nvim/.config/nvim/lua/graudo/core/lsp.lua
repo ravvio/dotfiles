@@ -5,7 +5,8 @@ vim.lsp.enable({
     'lua-ls',
     'vtsls',
     'astro-ls',
-    'svelte'
+    'svelte',
+    'zls',
 })
 
 -- Set up global keymaps
@@ -49,7 +50,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
             if not client then return end
             if not client:supports_method('textDocument/formatting') then return end
 
-            vim.lsp.buf.format({ async = false })
+            vim.lsp.buf.format({ async = false, timeout_ms = 2000 })
         end,
         "[F][O]rmat"
     )

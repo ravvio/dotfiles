@@ -1,19 +1,19 @@
 {
     "layer": "top",
-    "position": "top",
+    "position": "bottom",
     "mod": "dock",
     "exclusive": true,
     "passthrough": false,
-    "height": 44,
+    "height": 32,
     "modules-left": [
-        "hyprland/workspaces",
-        "hyprland/window"
+        "sway/workspaces",
+        "sway/window"
     ],
     "modules-center": [
         "clock"
     ],
     "modules-right": [
-        "hyprland/language",
+        "sway/language",
         "battery",
         "cpu",
         "disk",
@@ -42,16 +42,6 @@
         "on-click-right": "swaync-client -d -sw",
         "escape": true
     },
-    // "custom/updates": {
-    //     "format": "{icon} {number}",
-    //     "return-type": "json",
-    //     "format-icons": {
-    //         "has-updates": "󱍷",
-    //         "updated": "󰂪"
-    //     },
-    //     "exec-if": "which waybar-module-pacman-updates",
-    //     "exec": "waybar-module-pacman-updates  --interval-seconds 5 --network-interval-seconds 300"
-    // },
     "clock": {
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "timezone": "Europe/Rome",
@@ -151,7 +141,7 @@
         "icon-size": 16,
         "spacing": 14
     },
-    "hyprland/workspaces": {
+    "sway/workspaces": {
         "persistent-workspaces": {
             "1": [],
             "2": [],
@@ -163,7 +153,7 @@
             "8": []
         }
     },
-    "hyprland/window": {
+    "sway/window": {
         "format": "{}",
         "icon": true,
         "rewrite": {

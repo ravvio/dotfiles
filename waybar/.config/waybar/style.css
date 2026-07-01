@@ -55,8 +55,8 @@
 @define-color l-acqua #4c7a5d;
 
 * {
-    font-family: Monaspace Argon;
-    font-size: 13px;
+    font-family: JetBrains Mono NF;
+    font-size: 14px;
     min-height: 0;
 }
 
@@ -98,7 +98,7 @@ window#waybar {
 
 #window {
     color: @l-bg3;
-    padding: 0px 2px;
+    padding: 0px 0px;
     border-bottom: 3px solid;
     border-color: @l-bg3;
     margin-left: 5px;
@@ -135,7 +135,7 @@ window#waybar.empty #window {
 #custom-notification {
     background-color: @bg0;
     color: @FG;
-    font-size: 16px;
+    font-size: 14px;
     padding-left: 2px;
     padding-right: 10px;
     margin-right: 5px;
@@ -209,7 +209,6 @@ window#waybar.empty #window {
 
 #workspaces {
     background-color: @bg0;
-    padding: 5px 5px;
     margin-left: 5px;
     margin-right: 5px;
     border-radius: 10px;
@@ -217,28 +216,15 @@ window#waybar.empty #window {
 }
 
 #workspaces button {
-    border-radius: 0px;
     color: @fg0;
-    margin: 0;
+    padding: 2px 6px;
 }
 
-#workspaces button.active {
+#workspaces button.focused {
     font-weight: bold;
     color: @bg0;
-    background-color: @red;
-    border-radius: 10px;
-}
-
-window#waybar.kitty #workspaces button.active {
     background-color: @fg0;
-}
-
-window#waybar.firefox #workspaces button.active {
-    background-color: @orange;
-}
-
-window#waybar.WebCord #workspaces button.active {
-    background-color: @blue;
+    border-radius: 10px;
 }
 
 #language {

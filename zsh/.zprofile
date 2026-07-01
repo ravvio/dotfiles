@@ -16,6 +16,7 @@ addToPathFront () {
 }
 
 addToPath "$HOME/scripts"
+addToPath "$HOME/tools"
 
 libs="$HOME/libs"
 addToPath "$libs/zig"
@@ -65,3 +66,8 @@ addToPathFront "${DOTNET_ROOT}/tools"
 # Added by OrbStack: command-line tools and integration
 # This won't be added again if you remove it.
 source ~/.orbstack/shell/init.zsh 2>/dev/null || :
+
+# ZVM
+export ZVM_INSTALL="$HOME/.zvm/self"
+export PATH="$PATH:$HOME/.zvm/bin"
+export PATH="$PATH:$ZVM_INSTALL/"
